@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Client.Controller;
+using Client.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,12 @@ namespace Client
 {
     public partial class MainForm : Form
     {
+        private WMEController WMEController = new WMEController();
+        private CompanyList CompanyList = new CompanyList();
+        private LocationList LocationList = new LocationList();
+        private PalletList PalletList = new PalletList();
+        private ListAdapter ListAdapter = new ListAdapter();
+
         public MainForm()
         {
             InitializeComponent();
@@ -39,7 +47,9 @@ namespace Client
 
         private void ButtonViewAllCompanies_Click(object sender, EventArgs e)
         {
-
+            //orderList = administratorService.GetOrdersList();
+            CompanyList = WMEController.getCompanyList();
+            updateCompanyListView();
         }
 
         private void ButtonSearchPallet_Click(object sender, EventArgs e)
@@ -89,6 +99,33 @@ namespace Client
         private void EditToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        /// <summary>
+        /// update company list view
+        /// </summary>
+        private void updateCompanyListView()
+        {
+            listBoxCompanyIDs.Items.Clear();
+            List<string[]> adaptedCompanyList = ListAdapter.GetAdaptedAllCompanyList(CompanyList);
+
+            foreach (string[] company in adaptedCompanyList)
+            {
+                listBoxCompanyIDs.Items.Add(new ListViewItem(company));
+            }
+
+            paintOrderRows();
+        }
+
+        /// <summary>
+        /// painting rows in list view for companies
+        /// </summary>
+        private void paintOrderRows()
+        {
+            foreach (ListViewItem item in listBoxCompanyIDs.Items)
+            {
+                item.BackColor = item.Index % 2 == 0 ? Color.LightGray : Color.LightBlue;
+            }
         }
     }
 }

@@ -47,7 +47,30 @@ namespace Client.Controller
 
         public CompanyList getCompanyList()
         {
-            throw new NotImplementedException();
+            Setup();
+
+            //create request
+            SocketRequest socketRequest = new SocketRequest();
+            socketRequest.Action = ACTION.GET_COMPANY_LIST;
+
+            //seriliazing to JSON
+            string requestAsJSON = JsonConvert.SerializeObject(socketRequest);
+
+            //send request 
+            SendMessage(requestAsJSON);
+
+            //read resultset
+            string JsonString = ReadReplyMessage();
+
+            CompanyList companyList = new CompanyList();
+            clientSocket.NoDelay = true;
+            //deseriliasing 
+            companyList = JsonConvert.DeserializeObject<CompanyList>(JsonString);
+
+
+            clientSocket.Close();
+
+            return companyList;
         }
 
         public Location getLocationByID(string locationID)
@@ -67,7 +90,7 @@ namespace Client.Controller
         public void registerCompany(Company company)
         {
             //socket connection
-            //Setup();
+            Setup();
 
             Request = new SocketRequest();
             Request.Action = ACTION.REGISTER_COMPANY;

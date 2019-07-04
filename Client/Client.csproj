@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\IWMEController.cs" />
+    <Compile Include="ListAdapter.cs" />
     <Compile Include="Model\Company.cs" />
     <Compile Include="Model\CompanyList.cs" />
     <Compile Include="Model\Location.cs" />
