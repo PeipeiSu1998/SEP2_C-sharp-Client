@@ -12,14 +12,14 @@ using System.Windows.Forms;
 
 namespace Client
 {
-    public partial class Company : Form
+    public partial class EditCompany : Form
     {
-        public Company()
+        public EditCompany()
         {
             InitializeComponent();
         }
 
-        private void ButtonCreate_Click(object sender, EventArgs e)
+        private void ButtonSave_Click(object sender, EventArgs e)
         {
             IWMEController wMEController = new WMEController();
 
@@ -31,7 +31,7 @@ namespace Client
                 Phone = int.Parse(textBoxPhoneNumber.Text)
             };
 
-            wMEController.registerCompany(tempCompany);
+            wMEController.editCompany(tempCompany);
         }
 
         private void ButtonCancel_Click(object sender, EventArgs e)

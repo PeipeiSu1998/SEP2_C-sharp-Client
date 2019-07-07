@@ -12,14 +12,14 @@ namespace Client.Controller
         CompanyList getCompanyList();
         LocationList getAvailableLocationList();
         PalletList getAvailablePalletList();
-        void registerCompany(Company company);
-        void assignLocationToCompany(String locationID, String companyID);
-        void storePallet(Pallet pallet, String locationID);
-        Company getCompanyByID(String companyID);
-        Location getLocationByID(String locationID);
-        Pallet getPalletByID(String palletID, String companyID);
-        void removeLocationFromCurrentCompany(String companyID);
-        void removePallet(String palletID, String companyID);
-        void editCompany(RegisterCompany company);
+        void registerCompany(Model.Company company);
+        void assignLocationToCompany(string locationID, string companyID);
+        void storePallet(Pallet pallet, string locationID);
+        Model.Company getCompanyByID(string companyID);
+        Location getLocationByID(string locationID);
+        Pallet getPalletByID(string palletID, string companyID);
+        void removeLocationFromCurrentCompany(string locationID);
+        void removePallet(string palletID, string companyID);
+        void editCompany(Model.Company company);
     }
 }

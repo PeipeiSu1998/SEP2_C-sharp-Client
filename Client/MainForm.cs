@@ -69,7 +69,7 @@ namespace Client
         /// <param name="e"></param>
         private void RegisterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegisterCompany frm = new RegisterCompany();
+            Company frm = new Company();
             frm.Location = this.Location;
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.FormClosing += delegate { this.Show(); };

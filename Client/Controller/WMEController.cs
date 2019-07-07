@@ -16,33 +16,128 @@ namespace Client.Controller
         private int Port = 4400;
         IPEndPoint serverAddress;
         Socket clientSocket;
-
-        SocketRequest Request = new SocketRequest();
+        SocketRequest SocketRequest = new SocketRequest();
         JsonSerializer JsonSerializer = new JsonSerializer();
 
         public void assignLocationToCompany(string locationID, string companyID)
         {
-            throw new NotImplementedException();
+            //socket connection
+            Setup();
+
+            SocketRequest = new SocketRequest();
+            SocketRequest.Action = ACTION.ASSIGN_LOCATION_TO_COMPANY;
+            SocketRequest.LocationID = locationID;
+            SocketRequest.CompanyID = companyID;
+
+            //serializing to Json
+            string requestAsJSON = JsonConvert.SerializeObject(SocketRequest);
+
+            //send request
+            SendMessage(requestAsJSON);
+
+            // used for testing purposes
+            string JsonString = ReadReplyMessage();
+            bool response = false;
+            if (JsonString.Equals("success")) { response = true; }
+            clientSocket.Close();
+            //return response;
         }
 
-        public void editCompany(RegisterCompany company)
+        public void editCompany(Model.Company company)
         {
-            throw new NotImplementedException();
+            //socket connection
+            Setup();
+
+            SocketRequest = new SocketRequest();
+            SocketRequest.Action = ACTION.EDIT_COMPANY;
+            SocketRequest.Obj = company;
+
+            //serializing to Json
+            string requestAsJSON = JsonConvert.SerializeObject(SocketRequest);
+
+            //send request
+            SendMessage(requestAsJSON);
+
+            // used for testing purposes
+            string JsonString = ReadReplyMessage();
+            bool response = false;
+            if (JsonString.Equals("success")) { response = true; }
+            clientSocket.Close();
+            //return response;
         }
 
         public LocationList getAvailableLocationList()
         {
-            throw new NotImplementedException();
+            //socket connection
+            Setup();
+
+            SocketRequest = new SocketRequest();
+            SocketRequest.Action = ACTION.GET_AVAILABLE_LOCATIONS;
+            //send request
+            string requestAsJSON = JsonConvert.SerializeObject(SocketRequest);
+            SendMessage(requestAsJSON);
+
+            // used for testing purposes
+            string JsonString = ReadReplyMessage();
+
+            LocationList tempLocationList = new LocationList();
+            clientSocket.NoDelay = true;
+
+            //deserializing
+            tempLocationList = JsonConvert.DeserializeObject<LocationList>(JsonString);
+
+            clientSocket.Close();
+            return tempLocationList;
         }
 
         public PalletList getAvailablePalletList()
         {
-            throw new NotImplementedException();
+            //socket connection
+            Setup();
+
+            SocketRequest = new SocketRequest();
+            SocketRequest.Action = ACTION.GET_PALLET_LIST;
+            //send request
+            string requestAsJSON = JsonConvert.SerializeObject(SocketRequest);
+            SendMessage(requestAsJSON);
+
+            // used for testing purposes
+            string JsonString = ReadReplyMessage();
+
+            PalletList tempPalletList = new PalletList();
+            clientSocket.NoDelay = true;
+
+            //deserializing
+            tempPalletList = JsonConvert.DeserializeObject<PalletList>(JsonString);
+
+            clientSocket.Close();
+            return tempPalletList;
         }
 
-        public Company getCompanyByID(string companyID)
+        public Model.Company getCompanyByID(string companyID)
         {
-            throw new NotImplementedException();
+            //socket connection
+            Setup();
+
+            SocketRequest = new SocketRequest();
+            SocketRequest.Action = ACTION.GET_COMPANY_BYID;
+            SocketRequest.CompanyID = companyID;
+
+            //send request
+            string requestAsJSON = JsonConvert.SerializeObject(SocketRequest);
+            SendMessage(requestAsJSON);
+
+            // used for testing purposes
+            string JsonString = ReadReplyMessage();
+
+            Model.Company tempCompany = new Model.Company();
+            clientSocket.NoDelay = true;
+
+            //deserializing
+            tempCompany = JsonConvert.DeserializeObject<Model.Company>(JsonString);
+
+            clientSocket.Close();
+            return tempCompany;
         }
 
         public CompanyList getCompanyList()
@@ -75,28 +170,77 @@ namespace Client.Controller
 
         public Location getLocationByID(string locationID)
         {
-            throw new NotImplementedException();
+            Setup();
+
+            //create request
+            SocketRequest socketRequest = new SocketRequest();
+            socketRequest.Action = ACTION.GET_LOCATION_BYID;
+            socketRequest.LocationID = locationID;
+
+            //seriliazing to JSON
+            string requestAsJSON = JsonConvert.SerializeObject(socketRequest);
+
+            //send request 
+            SendMessage(requestAsJSON);
+
+            //read resultset
+            string JsonString = ReadReplyMessage();
+
+            Location location = new Location();
+            clientSocket.NoDelay = true;
+            //deseriliasing 
+            location = JsonConvert.DeserializeObject<Location>(JsonString);
+
+
+            clientSocket.Close();
+
+            return location;
         }
 
         public Pallet getPalletByID(string palletID, string companyID)
         {
-            throw new NotImplementedException();
+            Setup();
+
+            //create request
+            SocketRequest socketRequest = new SocketRequest();
+            socketRequest.Action = ACTION.GET_PALLET_BYID;
+            socketRequest.PalletID = palletID;
+            socketRequest.CompanyID = companyID;
+
+            //seriliazing to JSON
+            string requestAsJSON = JsonConvert.SerializeObject(socketRequest);
+
+            //send request 
+            SendMessage(requestAsJSON);
+
+            //read resultset
+            string JsonString = ReadReplyMessage();
+
+            Pallet pallet = new Pallet();
+            clientSocket.NoDelay = true;
+            //deseriliasing 
+            pallet = JsonConvert.DeserializeObject<Pallet>(JsonString);
+
+
+            clientSocket.Close();
+
+            return pallet;
         }
 
         /// <summary>
         /// Takes a company object, converts it into JSON and sends it to the java server. Expect a server reply used for tests.
         /// </summary>
         /// <param name="company"></param>
-        public void registerCompany(Company company)
+        public void registerCompany(Model.Company company)
         {
             //socket connection
             Setup();
 
-            Request = new SocketRequest();
-            Request.Action = ACTION.REGISTER_COMPANY;
-            Request.Obj = company;
+            SocketRequest = new SocketRequest();
+            SocketRequest.Action = ACTION.REGISTER_COMPANY;
+            SocketRequest.Obj = company;
             //send request
-            string requestAsJSON = JsonConvert.SerializeObject(Request);
+            string requestAsJSON = JsonConvert.SerializeObject(SocketRequest);
             SendMessage(requestAsJSON);
 
             // used for testing purposes
@@ -107,19 +251,68 @@ namespace Client.Controller
             //return response;
         }
 
-        public void removeLocationFromCurrentCompany(string companyID)
+        public void removeLocationFromCurrentCompany(string locationID)
         {
-            throw new NotImplementedException();
+            //socket connection
+            Setup();
+
+            SocketRequest = new SocketRequest();
+            SocketRequest.Action = ACTION.REMOVE_LOCATION_FROM_CURRENT_COMPANY;
+            SocketRequest.LocationID = locationID;
+            //send request
+            string requestAsJSON = JsonConvert.SerializeObject(SocketRequest);
+            SendMessage(requestAsJSON);
+
+            // used for testing purposes
+            string JsonString = ReadReplyMessage();
+            bool response = false;
+            if (JsonString.Equals("success")) { response = true; }
+            clientSocket.Close();
+            //return response;
         }
 
         public void removePallet(string palletID, string companyID)
         {
-            throw new NotImplementedException();
+            //socket connection
+            Setup();
+
+            SocketRequest = new SocketRequest();
+            SocketRequest.Action = ACTION.REMOVE_PALLET;
+            SocketRequest.PalletID = palletID;
+            SocketRequest.CompanyID = companyID;
+
+            //send request
+            string requestAsJSON = JsonConvert.SerializeObject(SocketRequest);
+            SendMessage(requestAsJSON);
+
+            // used for testing purposes
+            string JsonString = ReadReplyMessage();
+            bool response = false;
+            if (JsonString.Equals("success")) { response = true; }
+            clientSocket.Close();
+            //return response;
         }
 
         public void storePallet(Pallet pallet, string locationID)
         {
-            throw new NotImplementedException();
+            //socket connection
+            Setup();
+
+            SocketRequest = new SocketRequest();
+            SocketRequest.Action = ACTION.STORE_PALLET;
+            SocketRequest.Obj = pallet;
+            SocketRequest.LocationID = locationID;
+
+            //send request
+            string requestAsJSON = JsonConvert.SerializeObject(SocketRequest);
+            SendMessage(requestAsJSON);
+
+            // used for testing purposes
+            string JsonString = ReadReplyMessage();
+            bool response = false;
+            if (JsonString.Equals("success")) { response = true; }
+            clientSocket.Close();
+            //return response;
         }
 
         /// <summary>

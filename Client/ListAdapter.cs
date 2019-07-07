@@ -30,7 +30,7 @@ namespace Client
             List<string[]> allCompanyList = new List<string[]>();
             
 
-            foreach (Company company in companyList.companies)
+            foreach (Model.Company company in companyList.companies)
             {
                 string[] row = { company.CompanyID, company.Name, company.Phone.ToString(), company.Email };
                 allCompanyList.Add(row);
