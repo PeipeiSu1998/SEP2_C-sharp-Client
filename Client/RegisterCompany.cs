@@ -21,17 +21,45 @@ namespace Client
 
         private void ButtonCreate_Click(object sender, EventArgs e)
         {
+            bool validInput = false;
+
             IWMEController wMEController = new WMEController();
 
-            Model.Company tempCompany = new Model.Company
+            if (textBoxCompanyID.Text == "") 
             {
-                companyID = textBoxCompanyID.Text,
-                name = textBoxCompanyName.Text,
-                email = textBoxCompanyEmail.Text,
-                phone = int.Parse(textBoxPhoneNumber.Text)
-            };
+                errorProvider1.SetError(textBoxCompanyID, "Please input company ID");
+            }
+            if (textBoxCompanyName.Text == "")
+            {
+                errorProvider1.SetError(textBoxCompanyName, "Please input company name");
+            }
+            if (textBoxCompanyEmail.Text == "")
+            {
+                errorProvider1.SetError(textBoxCompanyEmail, "Please input company email");
+            }
+            if (textBoxPhoneNumber.Text == "")
+            {
+                errorProvider1.SetError(textBoxPhoneNumber, "Please input company phone number");
+            }
+            if (textBoxCompanyID.Text.Length >= 1 && textBoxCompanyName.Text.Length >= 1 && textBoxCompanyEmail.Text.Length >= 1 && textBoxPhoneNumber.Text.Length >= 1)
+            {
+                validInput = true;
+            }
 
-            wMEController.registerCompany(tempCompany);
+            if (validInput)
+            {
+                Model.Company tempCompany = new Model.Company
+                {
+                    companyID = textBoxCompanyID.Text,
+                    name = textBoxCompanyName.Text,
+                    email = textBoxCompanyEmail.Text,
+                    phone = int.Parse(textBoxPhoneNumber.Text)
+                };
+
+                wMEController.registerCompany(tempCompany);
+
+                validInput = false;
+            }
         }
 
         private void ButtonCancel_Click(object sender, EventArgs e)
