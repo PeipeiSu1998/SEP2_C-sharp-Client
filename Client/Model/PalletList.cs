@@ -4,6 +4,6 @@ namespace Client.Controller
 {
     public class PalletList
     {
-        public List<Pallet> Pallets { get; set; }
+        public List<Pallet> pallets { get; set; }
     }
 }

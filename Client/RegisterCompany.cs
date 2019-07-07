@@ -25,10 +25,10 @@ namespace Client
 
             Model.Company tempCompany = new Model.Company
             {
-                CompanyID = textBoxCompanyID.Text,
-                Name = textBoxCompanyName.Text,
-                Email = textBoxCompanyEmail.Text,
-                Phone = int.Parse(textBoxPhoneNumber.Text)
+                companyID = textBoxCompanyID.Text,
+                name = textBoxCompanyName.Text,
+                email = textBoxCompanyEmail.Text,
+                phone = int.Parse(textBoxPhoneNumber.Text)
             };
 
             wMEController.registerCompany(tempCompany);

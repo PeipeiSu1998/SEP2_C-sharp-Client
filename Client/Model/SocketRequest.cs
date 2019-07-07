@@ -13,6 +13,8 @@ namespace Client.Controller
         public string LocationID { get; set; }
         public string CompanyID { get; set; }
         public string PalletID { get; set; }
+        public DateTime RentalEndDate { get; set; }
+
         public enum ACTION
         {
             REGISTER_COMPANY,

@@ -17,7 +17,7 @@ namespace Client
             List<string[]> allAvailableLocationsList = new List<string[]>();
             
 
-            foreach (Location location in locationList.Locations)
+            foreach (Location location in locationList.locations)
             {
                 string[] row = { location.locationID, location.rentalStart.ToString(), location.rentalEnd.ToString() };
                 allAvailableLocationsList.Add(row);
@@ -32,7 +32,7 @@ namespace Client
 
             foreach (Model.Company company in companyList.companies)
             {
-                string[] row = { company.CompanyID, company.Name, company.Phone.ToString(), company.Email };
+                string[] row = { company.companyID, company.name, company.phone.ToString(), company.email };
                 allCompanyList.Add(row);
             }
             return allCompanyList;

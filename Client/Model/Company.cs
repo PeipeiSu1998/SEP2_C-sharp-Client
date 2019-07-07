@@ -4,10 +4,10 @@ namespace Client.Model
 {
     public class Company
     {
-        public string Name { get; set; }
-        public string CompanyID { get; set; }
-        public int Phone { get; set; }
-        public string Email { get; set; }
+        public string name { get; set; }
+        public string companyID { get; set; }
+        public int phone { get; set; }
+        public string email { get; set; }
         public LocationList locationList { get; set; }
     }
 }
