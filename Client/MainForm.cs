@@ -69,7 +69,7 @@ namespace Client
         /// <param name="e"></param>
         private void RegisterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Company frm = new Company();
+            TheMainForm frm = new TheMainForm();
             frm.Location = this.Location;
             frm.StartPosition = FormStartPosition.CenterScreen;
             frm.FormClosing += delegate { this.Show(); };
@@ -78,7 +78,11 @@ namespace Client
 
         private void EditDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            EditCompany frm = new EditCompany();
+            frm.Location = this.Location;
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.FormClosing += delegate { this.Show(); };
+            frm.Show();
         }
 
         private void ManageLocationsToolStripMenuItem_Click(object sender, EventArgs e)

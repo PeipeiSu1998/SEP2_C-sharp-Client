@@ -37,5 +37,18 @@ namespace Client
             }
             return allCompanyList;
         }
+
+        public List<string[]> GetAdaptedLocationsList(LocationList locationList)
+        {
+            List<string[]> allLocationList = new List<string[]>();
+
+
+            foreach (Location location in locationList.locations)
+            {
+                string[] row = { location.locationID, location.rentalStart.ToString(), location.rentalEnd.ToString() };
+                allLocationList.Add(row);
+            }
+            return allLocationList;
+        }
     }
 }

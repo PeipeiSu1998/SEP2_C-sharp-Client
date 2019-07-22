@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBoxCompanyID = new System.Windows.Forms.TextBox();
             this.textBoxCompanyName = new System.Windows.Forms.TextBox();
             this.textBoxCompanyEmail = new System.Windows.Forms.TextBox();
@@ -38,41 +39,48 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxCompanyID
             // 
-            this.textBoxCompanyID.Location = new System.Drawing.Point(86, 49);
+            this.textBoxCompanyID.Location = new System.Drawing.Point(115, 60);
+            this.textBoxCompanyID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxCompanyID.Name = "textBoxCompanyID";
-            this.textBoxCompanyID.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCompanyID.Size = new System.Drawing.Size(132, 22);
             this.textBoxCompanyID.TabIndex = 0;
             // 
             // textBoxCompanyName
             // 
-            this.textBoxCompanyName.Location = new System.Drawing.Point(86, 130);
+            this.textBoxCompanyName.Location = new System.Drawing.Point(115, 160);
+            this.textBoxCompanyName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxCompanyName.Name = "textBoxCompanyName";
-            this.textBoxCompanyName.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCompanyName.Size = new System.Drawing.Size(132, 22);
             this.textBoxCompanyName.TabIndex = 1;
             // 
             // textBoxCompanyEmail
             // 
-            this.textBoxCompanyEmail.Location = new System.Drawing.Point(86, 210);
+            this.textBoxCompanyEmail.Location = new System.Drawing.Point(115, 258);
+            this.textBoxCompanyEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxCompanyEmail.Name = "textBoxCompanyEmail";
-            this.textBoxCompanyEmail.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCompanyEmail.Size = new System.Drawing.Size(132, 22);
             this.textBoxCompanyEmail.TabIndex = 2;
             // 
             // textBoxPhoneNumber
             // 
-            this.textBoxPhoneNumber.Location = new System.Drawing.Point(86, 283);
+            this.textBoxPhoneNumber.Location = new System.Drawing.Point(115, 348);
+            this.textBoxPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
-            this.textBoxPhoneNumber.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPhoneNumber.Size = new System.Drawing.Size(132, 22);
             this.textBoxPhoneNumber.TabIndex = 3;
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(35, 346);
+            this.buttonSave.Location = new System.Drawing.Point(47, 426);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(75, 23);
+            this.buttonSave.Size = new System.Drawing.Size(100, 28);
             this.buttonSave.TabIndex = 4;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseMnemonic = false;
@@ -81,9 +89,10 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(154, 346);
+            this.buttonCancel.Location = new System.Drawing.Point(205, 426);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancel.Size = new System.Drawing.Size(100, 28);
             this.buttonCancel.TabIndex = 5;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -92,44 +101,52 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(83, 33);
+            this.label1.Location = new System.Drawing.Point(111, 41);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.Size = new System.Drawing.Size(84, 17);
             this.label1.TabIndex = 6;
             this.label1.Text = "Company ID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(83, 114);
+            this.label2.Location = new System.Drawing.Point(111, 140);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
+            this.label2.Size = new System.Drawing.Size(108, 17);
             this.label2.TabIndex = 7;
             this.label2.Text = "Company Name";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(83, 194);
+            this.label3.Location = new System.Drawing.Point(111, 239);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 13);
+            this.label3.Size = new System.Drawing.Size(109, 17);
             this.label3.TabIndex = 8;
             this.label3.Text = "Company  Email";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(83, 267);
+            this.label4.Location = new System.Drawing.Point(111, 329);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 13);
+            this.label4.Size = new System.Drawing.Size(116, 17);
             this.label4.TabIndex = 9;
             this.label4.Text = "Company  Phone";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // EditCompany
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(273, 418);
+            this.ClientSize = new System.Drawing.Size(364, 514);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -140,8 +157,10 @@
             this.Controls.Add(this.textBoxCompanyEmail);
             this.Controls.Add(this.textBoxCompanyName);
             this.Controls.Add(this.textBoxCompanyID);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EditCompany";
             this.Text = "EditCompany";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,5 +178,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

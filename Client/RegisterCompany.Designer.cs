@@ -1,6 +1,6 @@
 ﻿namespace Client
 {
-    partial class Company
+    partial class TheMainForm
     {
         /// <summary>
         /// Required designer variable.

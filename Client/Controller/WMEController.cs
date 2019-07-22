@@ -90,6 +90,30 @@ namespace Client.Controller
             return tempLocationList;
         }
 
+        public LocationList getRentedLocationList()
+        {
+            //socket connection
+            Setup();
+
+            SocketRequest = new SocketRequest();
+            SocketRequest.Action = ACTION.GET_LOCATIONS_OF_CURRENT_COMPANY;
+            //send request
+            string requestAsJSON = JsonConvert.SerializeObject(SocketRequest);
+            SendMessage(requestAsJSON);
+
+            // used for testing purposes
+            string JsonString = ReadReplyMessage();
+
+            LocationList tempLocationList = new LocationList();
+            clientSocket.NoDelay = true;
+
+            //deserializing
+            tempLocationList = JsonConvert.DeserializeObject<LocationList>(JsonString);
+
+            clientSocket.Close();
+            return tempLocationList;
+        }
+
         public PalletList getAvailablePalletList()
         {
             //socket connection

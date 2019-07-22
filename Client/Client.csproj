@@ -57,6 +57,12 @@
       <DependentUpon>EditCompany.cs</DependentUpon>
     </Compile>
     <Compile Include="ListAdapter.cs" />
+    <Compile Include="ManageLocations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageLocations.Designer.cs">
+      <DependentUpon>ManageLocations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Company.cs" />
     <Compile Include="Model\CompanyList.cs" />
     <Compile Include="Model\Location.cs" />
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageLocations.resx">
+      <DependentUpon>ManageLocations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -21,6 +21,7 @@ namespace Client.Controller
             ASSIGN_LOCATION_TO_COMPANY,
             REMOVE_LOCATION_FROM_CURRENT_COMPANY,
             EDIT_COMPANY,
+            EDIT_PALLET,
             GET_COMPANY_LIST,
             GET_COMPANY_BYID,
             STORE_PALLET,
@@ -28,7 +29,8 @@ namespace Client.Controller
             GET_PALLET_BYID,
             GET_PALLET_LIST,
             GET_AVAILABLE_LOCATIONS,
-            GET_LOCATION_BYID
+            GET_LOCATION_BYID,
+            GET_LOCATIONS_OF_CURRENT_COMPANY
         }
     }
 }

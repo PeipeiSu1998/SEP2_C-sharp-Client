@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Client
 {
-    public partial class Company : Form
+    public partial class TheMainForm : Form
     {
-        public Company()
+        public TheMainForm()
         {
             InitializeComponent();
         }
@@ -64,7 +64,12 @@ namespace Client
 
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
+            textBoxCompanyID.Text = null;
+            textBoxCompanyName.Text = null;
+            textBoxCompanyEmail.Text = null;
+            textBoxPhoneNumber.Text = null;
 
+            Close();
         }
     }
 }
