@@ -50,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\IWMEController.cs" />
+    <Compile Include="CreateEditPallet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateEditPallet.Designer.cs">
+      <DependentUpon>CreateEditPallet.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditCompany.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     <Compile Include="RegisterCompany.Designer.cs">
       <DependentUpon>RegisterCompany.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CreateEditPallet.resx">
+      <DependentUpon>CreateEditPallet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditCompany.resx">
       <DependentUpon>EditCompany.cs</DependentUpon>
     </EmbeddedResource>

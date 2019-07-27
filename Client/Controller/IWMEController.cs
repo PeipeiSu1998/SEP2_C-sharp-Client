@@ -19,7 +19,7 @@ namespace Client.Controller
         Location getLocationByID(string locationID);
         Pallet getPalletByID(string palletID, string companyID);
         void removeLocationFromCurrentCompany(string locationID);
-        void removePallet(string palletID, string companyID);
+        void removePallet(string palletID);
         void editCompany(Model.Company company);
     }
 }

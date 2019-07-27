@@ -19,30 +19,20 @@ namespace Client
         private LocationList LocationList = new LocationList();
         private PalletList PalletList = new PalletList();
         private ListAdapter ListAdapter = new ListAdapter();
+        private Company Company = new Company();
+        private Pallet Pallet = new Pallet();
 
         public MainForm()
         {
             InitializeComponent();
         }
 
-        private void ListBoxPallets_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ListBoxCompanyIDs_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ListBoxAvailableLocations_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void ButtonSearchCompany_Click(object sender, EventArgs e)
         {
-
+            Company = WMEController.getCompanyByID(textBoxCompanyID.Text);
+            CompanyList.companies = null;
+            CompanyList.companies.Add(Company);
+            updateCompanyListView();
         }
 
         private void ButtonViewAllCompanies_Click(object sender, EventArgs e)
@@ -54,12 +44,20 @@ namespace Client
 
         private void ButtonSearchPallet_Click(object sender, EventArgs e)
         {
-
+            Pallet = WMEController.getPalletByID(textBoxPalletIDs.Text, textBoxCompanyID.Text);
+            PalletList.pallets.Add(Pallet);
+            updatePalletListView();
         }
 
         private void ButtonViewAll_Click(object sender, EventArgs e)
         {
-
+            PalletList = WMEController.getAvailablePalletList();
+            updatePalletListView();
+        }
+        public void ButtonViewAllAvalableLocations_Click(object sender, EventArgs e)
+        {
+            LocationList = WMEController.getAvailableLocationList();
+            updateLocationListView();
         }
 
         /// <summary>
@@ -87,7 +85,11 @@ namespace Client
 
         private void ManageLocationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ManageLocations frm = new ManageLocations();
+            frm.Location = this.Location;
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.FormClosing += delegate { this.Show(); };
+            frm.Show();
         }
 
         private void InsertToolStripMenuItem_Click(object sender, EventArgs e)
@@ -105,6 +107,7 @@ namespace Client
 
         }
 
+
         /// <summary>
         /// update company list view
         /// </summary>
@@ -118,18 +121,74 @@ namespace Client
                 listBoxCompanyIDs.Items.Add(new ListViewItem(company));
             }
 
-            paintOrderRows();
+            paintCompanyRows();
+        }
+
+
+        /// <summary>
+        /// update pallet list view
+        /// </summary>
+        private void updatePalletListView()
+        {
+            listBoxPallets.Items.Clear();
+            List<string[]> adaptedPalletList = ListAdapter.GetAdaptedAllPalletsList(PalletList);
+
+            foreach (string[] pallet in adaptedPalletList)
+            {
+                listBoxPallets.Items.Add(new ListViewItem(pallet));
+            }
+
+            paintPalletRows();
+        }
+
+        /// <summary>
+        /// update location list view
+        /// </summary>
+        private void updateLocationListView()
+        {
+            listBoxAvailableLocations.Items.Clear();
+            List<string[]> adaptedLocationsList = ListAdapter.GetAdaptedLocationsList(LocationList);
+
+            foreach (string[] pallet in adaptedLocationsList)
+            {
+                listBoxAvailableLocations.Items.Add(new ListViewItem(pallet));
+            }
+
+            paintLocationRows();
         }
 
         /// <summary>
         /// painting rows in list view for companies
         /// </summary>
-        private void paintOrderRows()
+        private void paintCompanyRows()
         {
             foreach (ListViewItem item in listBoxCompanyIDs.Items)
             {
                 item.BackColor = item.Index % 2 == 0 ? Color.LightGray : Color.LightBlue;
             }
         }
+
+        /// <summary>
+        /// painting rows in list view for pallets
+        /// </summary>
+        private void paintPalletRows()
+        {
+            foreach (ListViewItem item in listBoxPallets.Items)
+            {
+                item.BackColor = item.Index % 2 == 0 ? Color.LightGray : Color.LightBlue;
+            }
+        }
+
+        /// <summary>
+        /// painting rows in list view for locations
+        /// </summary>
+        private void paintLocationRows()
+        {
+            foreach (ListViewItem item in listBoxAvailableLocations.Items)
+            {
+                item.BackColor = item.Index % 2 == 0 ? Color.LightGray : Color.LightBlue;
+            }
+        }
+
     }
 }

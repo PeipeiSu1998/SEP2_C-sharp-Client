@@ -45,7 +45,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(175, 73);
+            this.label1.Location = new System.Drawing.Point(28, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 17);
             this.label1.TabIndex = 0;
@@ -54,7 +54,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(754, 68);
+            this.label2.Location = new System.Drawing.Point(608, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 17);
             this.label2.TabIndex = 1;
@@ -63,7 +63,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(175, 313);
+            this.label3.Location = new System.Drawing.Point(28, 215);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(119, 17);
             this.label3.TabIndex = 2;
@@ -72,7 +72,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(754, 313);
+            this.label4.Location = new System.Drawing.Point(608, 215);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 17);
             this.label4.TabIndex = 3;
@@ -82,37 +82,37 @@
             // 
             this.listBoxRentedLocations.FormattingEnabled = true;
             this.listBoxRentedLocations.ItemHeight = 16;
-            this.listBoxRentedLocations.Location = new System.Drawing.Point(178, 365);
+            this.listBoxRentedLocations.Location = new System.Drawing.Point(31, 235);
             this.listBoxRentedLocations.Name = "listBoxRentedLocations";
-            this.listBoxRentedLocations.Size = new System.Drawing.Size(386, 340);
+            this.listBoxRentedLocations.Size = new System.Drawing.Size(444, 452);
             this.listBoxRentedLocations.TabIndex = 4;
             // 
             // listBoxAvailableLocations
             // 
             this.listBoxAvailableLocations.FormattingEnabled = true;
             this.listBoxAvailableLocations.ItemHeight = 16;
-            this.listBoxAvailableLocations.Location = new System.Drawing.Point(757, 365);
+            this.listBoxAvailableLocations.Location = new System.Drawing.Point(611, 235);
             this.listBoxAvailableLocations.Name = "listBoxAvailableLocations";
-            this.listBoxAvailableLocations.Size = new System.Drawing.Size(485, 356);
+            this.listBoxAvailableLocations.Size = new System.Drawing.Size(482, 452);
             this.listBoxAvailableLocations.TabIndex = 5;
             // 
             // textBoxCompanyID
             // 
-            this.textBoxCompanyID.Location = new System.Drawing.Point(178, 113);
+            this.textBoxCompanyID.Location = new System.Drawing.Point(31, 68);
             this.textBoxCompanyID.Name = "textBoxCompanyID";
             this.textBoxCompanyID.Size = new System.Drawing.Size(229, 22);
             this.textBoxCompanyID.TabIndex = 6;
             // 
             // textBoxLocationID
             // 
-            this.textBoxLocationID.Location = new System.Drawing.Point(757, 113);
+            this.textBoxLocationID.Location = new System.Drawing.Point(610, 68);
             this.textBoxLocationID.Name = "textBoxLocationID";
             this.textBoxLocationID.Size = new System.Drawing.Size(221, 22);
             this.textBoxLocationID.TabIndex = 7;
             // 
             // buttonSearchCompany
             // 
-            this.buttonSearchCompany.Location = new System.Drawing.Point(178, 156);
+            this.buttonSearchCompany.Location = new System.Drawing.Point(31, 111);
             this.buttonSearchCompany.Name = "buttonSearchCompany";
             this.buttonSearchCompany.Size = new System.Drawing.Size(229, 23);
             this.buttonSearchCompany.TabIndex = 8;
@@ -122,7 +122,7 @@
             // 
             // buttonRentLocation
             // 
-            this.buttonRentLocation.Location = new System.Drawing.Point(757, 156);
+            this.buttonRentLocation.Location = new System.Drawing.Point(610, 111);
             this.buttonRentLocation.Name = "buttonRentLocation";
             this.buttonRentLocation.Size = new System.Drawing.Size(221, 23);
             this.buttonRentLocation.TabIndex = 9;
@@ -132,7 +132,7 @@
             // 
             // buttonUnRentLocation
             // 
-            this.buttonUnRentLocation.Location = new System.Drawing.Point(758, 197);
+            this.buttonUnRentLocation.Location = new System.Drawing.Point(611, 152);
             this.buttonUnRentLocation.Name = "buttonUnRentLocation";
             this.buttonUnRentLocation.Size = new System.Drawing.Size(220, 23);
             this.buttonUnRentLocation.TabIndex = 10;
@@ -142,7 +142,7 @@
             // 
             // buttonViewAvailableLocations
             // 
-            this.buttonViewAvailableLocations.Location = new System.Drawing.Point(758, 727);
+            this.buttonViewAvailableLocations.Location = new System.Drawing.Point(610, 698);
             this.buttonViewAvailableLocations.Name = "buttonViewAvailableLocations";
             this.buttonViewAvailableLocations.Size = new System.Drawing.Size(220, 23);
             this.buttonViewAvailableLocations.TabIndex = 11;
@@ -154,7 +154,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1386, 779);
+            this.ClientSize = new System.Drawing.Size(1128, 780);
             this.Controls.Add(this.buttonViewAvailableLocations);
             this.Controls.Add(this.buttonUnRentLocation);
             this.Controls.Add(this.buttonRentLocation);

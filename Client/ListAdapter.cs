@@ -50,5 +50,18 @@ namespace Client
             }
             return allLocationList;
         }
+
+        public List<string[]> GetAdaptedAllPalletsList(PalletList palletList)
+        {
+            List<string[]> allPalletList = new List<string[]>();
+
+
+            foreach (Pallet pallet in palletList.pallets)
+            {
+                string[] row = { pallet.palletID, pallet.palletHeight.ToString(), pallet.palletArea.ToString(), pallet.arrivalDate.ToString(), pallet.daysStored.ToString() };
+                allPalletList.Add(row);
+            }
+            return allPalletList;
+        }
     }
 }

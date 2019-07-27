@@ -43,6 +43,28 @@ namespace Client.Controller
             //return response;
         }
 
+        internal void updatePallet(Pallet pallet, string locationID)
+        {
+            //socket connection
+            Setup();
+
+            SocketRequest = new SocketRequest();
+            SocketRequest.Action = ACTION.EDIT_PALLET;
+            SocketRequest.Obj = pallet;
+            SocketRequest.LocationID = locationID;
+
+            //send request
+            string requestAsJSON = JsonConvert.SerializeObject(SocketRequest);
+            SendMessage(requestAsJSON);
+
+            // used for testing purposes
+            string JsonString = ReadReplyMessage();
+            bool response = false;
+            if (JsonString.Equals("success")) { response = true; }
+            clientSocket.Close();
+            //return response;
+        }
+
         public void editCompany(Model.Company company)
         {
             //socket connection
@@ -90,13 +112,14 @@ namespace Client.Controller
             return tempLocationList;
         }
 
-        public LocationList getRentedLocationList()
+        public LocationList getRentedLocationList(string companyID)
         {
             //socket connection
             Setup();
 
             SocketRequest = new SocketRequest();
             SocketRequest.Action = ACTION.GET_LOCATIONS_OF_CURRENT_COMPANY;
+            SocketRequest.CompanyID = companyID;
             //send request
             string requestAsJSON = JsonConvert.SerializeObject(SocketRequest);
             SendMessage(requestAsJSON);
@@ -295,7 +318,7 @@ namespace Client.Controller
             //return response;
         }
 
-        public void removePallet(string palletID, string companyID)
+        public void removePallet(string palletID)
         {
             //socket connection
             Setup();
@@ -303,7 +326,6 @@ namespace Client.Controller
             SocketRequest = new SocketRequest();
             SocketRequest.Action = ACTION.REMOVE_PALLET;
             SocketRequest.PalletID = palletID;
-            SocketRequest.CompanyID = companyID;
 
             //send request
             string requestAsJSON = JsonConvert.SerializeObject(SocketRequest);

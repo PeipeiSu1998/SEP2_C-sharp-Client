@@ -27,7 +27,7 @@ namespace Client
 
         private void ButtonFindCompanyLocations_Click(object sender, EventArgs e)
         {
-            AvailableLocationList = WMEController.getRentedLocationList();
+            AvailableLocationList = WMEController.getRentedLocationList(textBoxCompanyID.Text);
             updateRentedLocationsListView();
         }
 
