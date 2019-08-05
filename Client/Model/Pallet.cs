@@ -8,6 +8,6 @@ namespace Client.Controller
         public double palletHeight { get; set; }
         public double palletArea { get; set; }
         public DateTime arrivalDate { get; set; }
-        public int daysStored { get; set; }
+        public string daysStored { get; set; }
     }
 }

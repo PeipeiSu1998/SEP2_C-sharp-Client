@@ -30,7 +30,7 @@ namespace Client
         private void ButtonSearchCompany_Click(object sender, EventArgs e)
         {
             Company = WMEController.getCompanyByID(textBoxCompanyID.Text);
-            CompanyList.companies = null;
+            CompanyList.companies = new List<Company>();
             CompanyList.companies.Add(Company);
             updateCompanyListView();
         }
@@ -57,7 +57,7 @@ namespace Client
         public void ButtonViewAllAvalableLocations_Click(object sender, EventArgs e)
         {
             LocationList = WMEController.getAvailableLocationList();
-            updateLocationListView();
+            updateAvailableLocationListView();
         }
 
         /// <summary>
@@ -144,10 +144,10 @@ namespace Client
         /// <summary>
         /// update location list view
         /// </summary>
-        private void updateLocationListView()
+        private void updateAvailableLocationListView()
         {
             listBoxAvailableLocations.Items.Clear();
-            List<string[]> adaptedLocationsList = ListAdapter.GetAdaptedLocationsList(LocationList);
+            List<string[]> adaptedLocationsList = ListAdapter.GetAdaptedAvailableLocationsList(LocationList);
 
             foreach (string[] pallet in adaptedLocationsList)
             {

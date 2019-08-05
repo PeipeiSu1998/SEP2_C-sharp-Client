@@ -27,24 +27,39 @@ namespace Client
 
         private void ButtonFindCompanyLocations_Click(object sender, EventArgs e)
         {
-            AvailableLocationList = WMEController.getRentedLocationList(textBoxCompanyID.Text);
+            RentedLocationList = new LocationList();
+            RentedLocationList = WMEController.getRentedLocationList(textBoxCompanyID.Text);
             updateRentedLocationsListView();
         }
 
         private void ButtonRentLocation_Click(object sender, EventArgs e)
         {
-            WMEController.assignLocationToCompany(textBoxLocationID.Text, textBoxCompanyID.Text);
+            if (textBoxLocationID.Text != null && textBoxCompanyID.Text != null)
+                WMEController.assignLocationToCompany(textBoxLocationID.Text, textBoxCompanyID.Text);
+
+            RentedLocationList = new LocationList();
+            AvailableLocationList = new LocationList();
+            updateAvailableLocationsListView();
+            updateRentedLocationsListView();
         }
 
         private void ButtonUnRentLocation_Click(object sender, EventArgs e)
         {
             WMEController.removeLocationFromCurrentCompany(textBoxLocationID.Text);
+            RentedLocationList = new LocationList();
+            AvailableLocationList = new LocationList();
+            updateAvailableLocationsListView();
+            updateRentedLocationsListView();
         }
 
         private void ButtonViewAvailableLocations_Click(object sender, EventArgs e)
         {
+            RentedLocationList = new LocationList();
+            AvailableLocationList = new LocationList();
+
             AvailableLocationList = WMEController.getAvailableLocationList();
             updateAvailableLocationsListView();
+            updateRentedLocationsListView();
         }
 
         /// <summary>
@@ -53,7 +68,7 @@ namespace Client
         private void updateRentedLocationsListView()
         {
             listBoxRentedLocations.Items.Clear();
-            List<string[]> adaptedRentedLocationsList = ListAdapter.GetAdaptedLocationsList(RentedLocationList);
+            List<string[]> adaptedRentedLocationsList = ListAdapter.GetAdaptedRentedLocationsList(RentedLocationList);
 
             foreach (string[] location in adaptedRentedLocationsList)
             {
@@ -68,8 +83,8 @@ namespace Client
         /// </summary>
         private void updateAvailableLocationsListView()
         {
-            listBoxRentedLocations.Items.Clear();
-            List<string[]> adaptedAvailableLocationsList = ListAdapter.GetAdaptedLocationsList(AvailableLocationList);
+            listBoxAvailableLocations.Items.Clear();
+            List<string[]> adaptedAvailableLocationsList = ListAdapter.GetAdaptedAvailableLocationsList(AvailableLocationList);
 
             foreach (string[] location in adaptedAvailableLocationsList)
             {

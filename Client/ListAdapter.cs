@@ -12,23 +12,10 @@ namespace Client
     {
         private IWMEController wMEController = new WMEController();
 
-        public List<string[]> GetAdaptedAllAvailableLocationsList(LocationList locationList)
-        {
-            List<string[]> allAvailableLocationsList = new List<string[]>();
-            
-
-            foreach (Location location in locationList.locations)
-            {
-                string[] row = { location.locationID, location.rentalStart.ToString(), location.rentalEnd.ToString() };
-                allAvailableLocationsList.Add(row);
-            }
-            return allAvailableLocationsList;
-        }
-
         public List<string[]> GetAdaptedAllCompanyList(CompanyList companyList)
         {
             List<string[]> allCompanyList = new List<string[]>();
-            
+
 
             foreach (Model.Company company in companyList.companies)
             {
@@ -38,16 +25,29 @@ namespace Client
             return allCompanyList;
         }
 
-        public List<string[]> GetAdaptedLocationsList(LocationList locationList)
+        public List<string[]> GetAdaptedAvailableLocationsList(LocationList locationList)
         {
             List<string[]> allLocationList = new List<string[]>();
 
+            if (locationList.locations != null)
+                foreach (Location location in locationList.locations)
+                {
+                    string[] row = { location.locationID };
+                    allLocationList.Add(row);
+                }
+            return allLocationList;
+        }
 
-            foreach (Location location in locationList.locations)
-            {
-                string[] row = { location.locationID, location.rentalStart.ToString(), location.rentalEnd.ToString() };
-                allLocationList.Add(row);
-            }
+        public List<string[]> GetAdaptedRentedLocationsList(LocationList locationList)
+        {
+            List<string[]> allLocationList = new List<string[]>();
+
+            if (locationList.locations != null)
+                foreach (Location location in locationList.locations)
+                {
+                    string[] row = { location.locationID, new DateTime(long.Parse(location.rentalStart)).ToString() };
+                    allLocationList.Add(row);
+                }
             return allLocationList;
         }
 
@@ -55,12 +55,12 @@ namespace Client
         {
             List<string[]> allPalletList = new List<string[]>();
 
-
-            foreach (Pallet pallet in palletList.pallets)
-            {
-                string[] row = { pallet.palletID, pallet.palletHeight.ToString(), pallet.palletArea.ToString(), pallet.arrivalDate.ToString(), pallet.daysStored.ToString() };
-                allPalletList.Add(row);
-            }
+            if (palletList.pallets != null)
+                foreach (Pallet pallet in palletList.pallets)
+                {
+                    string[] row = { pallet.palletID, pallet.palletHeight.ToString(), pallet.palletArea.ToString(), pallet.arrivalDate.ToString(), pallet.daysStored.ToString() };
+                    allPalletList.Add(row);
+                }
             return allPalletList;
         }
     }

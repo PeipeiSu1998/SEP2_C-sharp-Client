@@ -91,6 +91,12 @@
     <Compile Include="RegisterCompany.Designer.cs">
       <DependentUpon>RegisterCompany.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReleasePallet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReleasePallet.Designer.cs">
+      <DependentUpon>ReleasePallet.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CreateEditPallet.resx">
       <DependentUpon>CreateEditPallet.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +120,9 @@
     </Compile>
     <EmbeddedResource Include="RegisterCompany.resx">
       <DependentUpon>RegisterCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReleasePallet.resx">
+      <DependentUpon>ReleasePallet.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
