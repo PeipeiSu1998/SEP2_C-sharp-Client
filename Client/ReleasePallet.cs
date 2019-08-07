@@ -21,7 +21,7 @@ namespace Client
 
         private void ButtonReleasePallet_Click(object sender, EventArgs e)
         {
-            WMEController.removePallet(textBoxPalletID.Text);
+            WMEController.removePallet(textBoxPalletID.Text, textBoxCompanyID.Text);
         }
 
         private void ButtonCancel_Click(object sender, EventArgs e)

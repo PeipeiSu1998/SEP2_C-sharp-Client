@@ -1,4 +1,4 @@
-﻿namespace Client
+﻿namespace ClientViewOnly
 {
     partial class MainForm
     {

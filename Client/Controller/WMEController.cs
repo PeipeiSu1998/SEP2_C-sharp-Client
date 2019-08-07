@@ -43,7 +43,7 @@ namespace Client.Controller
             //return response;
         }
 
-        internal void updatePallet(Pallet pallet, string locationID)
+        public void updatePallet(Pallet pallet)
         {
             //socket connection
             Setup();
@@ -51,7 +51,6 @@ namespace Client.Controller
             SocketRequest = new SocketRequest();
             SocketRequest.Action = ACTION.EDIT_PALLET;
             SocketRequest.Obj = pallet;
-            SocketRequest.LocationID = locationID;
 
             //send request
             string requestAsJSON = JsonConvert.SerializeObject(SocketRequest);
@@ -184,7 +183,10 @@ namespace Client.Controller
             tempCompany = JsonConvert.DeserializeObject<Model.Company>(JsonString);
 
             clientSocket.Close();
-            return tempCompany;
+            if (tempCompany.companyID == null)
+                return null;
+            else
+                return tempCompany;
         }
 
         public CompanyList getCompanyList()
@@ -270,8 +272,10 @@ namespace Client.Controller
 
 
             clientSocket.Close();
-
-            return pallet;
+            if (pallet.palletID == null)
+                return null;
+            else
+                return pallet;
         }
 
         /// <summary>
@@ -318,7 +322,7 @@ namespace Client.Controller
             //return response;
         }
 
-        public void removePallet(string palletID)
+        public void removePallet(string palletID, string companyID)
         {
             //socket connection
             Setup();
@@ -326,6 +330,7 @@ namespace Client.Controller
             SocketRequest = new SocketRequest();
             SocketRequest.Action = ACTION.REMOVE_PALLET;
             SocketRequest.PalletID = palletID;
+            SocketRequest.CompanyID = companyID;
 
             //send request
             string requestAsJSON = JsonConvert.SerializeObject(SocketRequest);
@@ -339,7 +344,7 @@ namespace Client.Controller
             //return response;
         }
 
-        public void storePallet(Pallet pallet, string locationID)
+        public void storePallet(Pallet pallet)
         {
             //socket connection
             Setup();
@@ -347,7 +352,6 @@ namespace Client.Controller
             SocketRequest = new SocketRequest();
             SocketRequest.Action = ACTION.STORE_PALLET;
             SocketRequest.Obj = pallet;
-            SocketRequest.LocationID = locationID;
 
             //send request
             string requestAsJSON = JsonConvert.SerializeObject(SocketRequest);

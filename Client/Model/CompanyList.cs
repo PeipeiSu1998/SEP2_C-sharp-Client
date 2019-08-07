@@ -8,6 +8,6 @@ namespace Client.Model
 {
     class CompanyList
     {
-        public List<Company> companies { get; set; }
+        public List<Company> companies { get; set; } = new List<Company>();
     }
 }

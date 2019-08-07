@@ -4,6 +4,6 @@ namespace Client.Controller
 {
     public class LocationList
     {
-        public List<Location> locations { get; set; }
+        public List<Location> locations { get; set; } = new List<Location>();
     }
 }

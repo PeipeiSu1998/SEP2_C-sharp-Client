@@ -58,7 +58,7 @@ namespace Client
             if (palletList.pallets != null)
                 foreach (Pallet pallet in palletList.pallets)
                 {
-                    string[] row = { pallet.palletID, pallet.palletHeight.ToString(), pallet.palletArea.ToString(), pallet.arrivalDate.ToString(), pallet.daysStored.ToString() };
+                    string[] row = { pallet.palletID, pallet.companyID, pallet.locationID, pallet.palletHeight.ToString(), pallet.palletArea.ToString(), pallet.arrivalDate.ToString(), pallet.daysStored.ToString() };
                     allPalletList.Add(row);
                 }
             return allPalletList;

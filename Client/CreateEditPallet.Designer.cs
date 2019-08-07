@@ -42,12 +42,14 @@
             this.buttonUpdatePallet = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxCompanyID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(173, 19);
+            this.label1.Location = new System.Drawing.Point(237, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 17);
             this.label1.TabIndex = 0;
@@ -56,7 +58,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(176, 84);
+            this.label2.Location = new System.Drawing.Point(240, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 17);
             this.label2.TabIndex = 1;
@@ -65,7 +67,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(303, 19);
+            this.label3.Location = new System.Drawing.Point(367, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 17);
             this.label3.TabIndex = 2;
@@ -74,7 +76,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(303, 81);
+            this.label4.Location = new System.Drawing.Point(367, 81);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 17);
             this.label4.TabIndex = 3;
@@ -98,28 +100,28 @@
             // 
             // textBoxPalletID
             // 
-            this.textBoxPalletID.Location = new System.Drawing.Point(176, 39);
+            this.textBoxPalletID.Location = new System.Drawing.Point(240, 39);
             this.textBoxPalletID.Name = "textBoxPalletID";
             this.textBoxPalletID.Size = new System.Drawing.Size(100, 22);
             this.textBoxPalletID.TabIndex = 6;
             // 
             // textBoxLocationID
             // 
-            this.textBoxLocationID.Location = new System.Drawing.Point(176, 104);
+            this.textBoxLocationID.Location = new System.Drawing.Point(240, 104);
             this.textBoxLocationID.Name = "textBoxLocationID";
             this.textBoxLocationID.Size = new System.Drawing.Size(100, 22);
             this.textBoxLocationID.TabIndex = 7;
             // 
             // textBoxPalletHeight
             // 
-            this.textBoxPalletHeight.Location = new System.Drawing.Point(306, 39);
+            this.textBoxPalletHeight.Location = new System.Drawing.Point(370, 39);
             this.textBoxPalletHeight.Name = "textBoxPalletHeight";
             this.textBoxPalletHeight.Size = new System.Drawing.Size(100, 22);
             this.textBoxPalletHeight.TabIndex = 8;
             // 
             // textBoxPalletArea
             // 
-            this.textBoxPalletArea.Location = new System.Drawing.Point(306, 101);
+            this.textBoxPalletArea.Location = new System.Drawing.Point(370, 101);
             this.textBoxPalletArea.Name = "textBoxPalletArea";
             this.textBoxPalletArea.Size = new System.Drawing.Size(100, 22);
             this.textBoxPalletArea.TabIndex = 9;
@@ -165,11 +167,29 @@
             this.label7.Text = "to the correct one again, failure to do so will change the arrival date to a wron" +
     "g one.";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(105, 19);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(84, 17);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Company ID";
+            // 
+            // textBoxCompanyID
+            // 
+            this.textBoxCompanyID.Location = new System.Drawing.Point(108, 39);
+            this.textBoxCompanyID.Name = "textBoxCompanyID";
+            this.textBoxCompanyID.Size = new System.Drawing.Size(100, 22);
+            this.textBoxCompanyID.TabIndex = 15;
+            // 
             // CreateEditPallet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 311);
+            this.Controls.Add(this.textBoxCompanyID);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.buttonUpdatePallet);
@@ -207,5 +227,7 @@
         private System.Windows.Forms.Button buttonUpdatePallet;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBoxCompanyID;
     }
 }

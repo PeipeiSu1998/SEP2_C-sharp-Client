@@ -27,8 +27,10 @@ namespace Client
             Pallet.palletArea = double.Parse(textBoxPalletArea.Text);
             Pallet.palletHeight = double.Parse(textBoxPalletHeight.Text);
             Pallet.palletID = textBoxPalletID.Text;
+            Pallet.locationID = textBoxLocationID.Text;
+            Pallet.companyID = textBoxCompanyID.Text;
 
-            WMEController.storePallet(Pallet, textBoxLocationID.Text);
+            WMEController.storePallet(Pallet);
         }
 
         private void ButtonUpdatePallet_Click(object sender, EventArgs e)
@@ -37,8 +39,10 @@ namespace Client
             Pallet.palletArea = double.Parse(textBoxPalletArea.Text);
             Pallet.palletHeight = double.Parse(textBoxPalletHeight.Text);
             Pallet.palletID = textBoxPalletID.Text;
+            Pallet.locationID = textBoxLocationID.Text;
+            Pallet.companyID = textBoxCompanyID.Text;
 
-            WMEController.updatePallet(Pallet, textBoxLocationID.Text);
+            WMEController.updatePallet(Pallet);
         }
     }
 }

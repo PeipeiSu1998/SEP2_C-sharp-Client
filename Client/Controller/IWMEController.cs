@@ -14,12 +14,13 @@ namespace Client.Controller
         PalletList getAvailablePalletList();
         void registerCompany(Model.Company company);
         void assignLocationToCompany(string locationID, string companyID);
-        void storePallet(Pallet pallet, string locationID);
+        void storePallet(Pallet pallet);
         Model.Company getCompanyByID(string companyID);
         Location getLocationByID(string locationID);
         Pallet getPalletByID(string palletID, string companyID);
         void removeLocationFromCurrentCompany(string locationID);
-        void removePallet(string palletID);
+        void removePallet(string palletID, string companyID);
         void editCompany(Model.Company company);
+        void updatePallet(Pallet pallet);
     }
 }
