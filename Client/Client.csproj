@@ -50,7 +50,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\IWMEController.cs" />
+    <Compile Include="CreateEditPallet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateEditPallet.Designer.cs">
+      <DependentUpon>CreateEditPallet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditCompany.Designer.cs">
+      <DependentUpon>EditCompany.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListAdapter.cs" />
+    <Compile Include="ManageLocations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageLocations.Designer.cs">
+      <DependentUpon>ManageLocations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Company.cs" />
     <Compile Include="Model\CompanyList.cs" />
     <Compile Include="Model\Location.cs" />
@@ -67,8 +85,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterCompany.Designer.cs">
+      <DependentUpon>RegisterCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReleasePallet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReleasePallet.Designer.cs">
+      <DependentUpon>ReleasePallet.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CreateEditPallet.resx">
+      <DependentUpon>CreateEditPallet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditCompany.resx">
+      <DependentUpon>EditCompany.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageLocations.resx">
+      <DependentUpon>ManageLocations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -79,6 +118,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RegisterCompany.resx">
+      <DependentUpon>RegisterCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReleasePallet.resx">
+      <DependentUpon>ReleasePallet.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

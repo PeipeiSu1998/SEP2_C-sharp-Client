@@ -64,6 +64,57 @@ namespace Client
         }
 
         /// <summary>
+        /// Used when the "Register" tool strip item from "Company" is clicked to open a new form for company registration.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RegisterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TheMainForm frm = new TheMainForm();
+            frm.Location = this.Location;
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.FormClosing += delegate { this.Show(); };
+            frm.Show();
+        }
+
+        private void EditDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditCompany frm = new EditCompany();
+            frm.Location = this.Location;
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.FormClosing += delegate { this.Show(); };
+            frm.Show();
+        }
+
+        private void ManageLocationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageLocations frm = new ManageLocations();
+            frm.Location = this.Location;
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.FormClosing += delegate { this.Show(); };
+            frm.Show();
+        }
+
+        private void InsertToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateEditPallet frm = new CreateEditPallet();
+            frm.Location = this.Location;
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.FormClosing += delegate { this.Show(); };
+            frm.Show();
+        }
+
+        private void RemoveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReleasePallet frm = new ReleasePallet();
+            frm.Location = this.Location;
+            frm.StartPosition = FormStartPosition.CenterScreen;
+            frm.FormClosing += delegate { this.Show(); };
+            frm.Show();
+        }
+
+
+        /// <summary>
         /// update company list view
         /// </summary>
         private void updateCompanyListView()

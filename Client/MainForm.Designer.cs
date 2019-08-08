@@ -28,6 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.companyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageLocationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.palletToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.insertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxCompanyID = new System.Windows.Forms.TextBox();
             this.buttonSearchCompany = new System.Windows.Forms.Button();
@@ -53,7 +63,81 @@
             this.comName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.comPhone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.comEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.companyToolStripMenuItem,
+            this.palletToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(903, 28);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // companyToolStripMenuItem
+            // 
+            this.companyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registerToolStripMenuItem,
+            this.editDetailsToolStripMenuItem,
+            this.manageLocationsToolStripMenuItem});
+            this.companyToolStripMenuItem.Name = "companyToolStripMenuItem";
+            this.companyToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.companyToolStripMenuItem.Text = "Company";
+            // 
+            // registerToolStripMenuItem
+            // 
+            this.registerToolStripMenuItem.Name = "registerToolStripMenuItem";
+            this.registerToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.registerToolStripMenuItem.Text = "Register";
+            this.registerToolStripMenuItem.Click += new System.EventHandler(this.RegisterToolStripMenuItem_Click);
+            // 
+            // editDetailsToolStripMenuItem
+            // 
+            this.editDetailsToolStripMenuItem.Name = "editDetailsToolStripMenuItem";
+            this.editDetailsToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.editDetailsToolStripMenuItem.Text = "Edit details";
+            this.editDetailsToolStripMenuItem.Click += new System.EventHandler(this.EditDetailsToolStripMenuItem_Click);
+            // 
+            // manageLocationsToolStripMenuItem
+            // 
+            this.manageLocationsToolStripMenuItem.Name = "manageLocationsToolStripMenuItem";
+            this.manageLocationsToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
+            this.manageLocationsToolStripMenuItem.Text = "Manage locations";
+            this.manageLocationsToolStripMenuItem.Click += new System.EventHandler(this.ManageLocationsToolStripMenuItem_Click);
+            // 
+            // palletToolStripMenuItem
+            // 
+            this.palletToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.insertToolStripMenuItem,
+            this.removeToolStripMenuItem});
+            this.palletToolStripMenuItem.Name = "palletToolStripMenuItem";
+            this.palletToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.palletToolStripMenuItem.Text = "Pallet";
+            // 
+            // insertToolStripMenuItem
+            // 
+            this.insertToolStripMenuItem.Name = "insertToolStripMenuItem";
+            this.insertToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.insertToolStripMenuItem.Text = "Create/Update";
+            this.insertToolStripMenuItem.Click += new System.EventHandler(this.InsertToolStripMenuItem_Click);
+            // 
+            // removeToolStripMenuItem
+            // 
+            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.removeToolStripMenuItem.Text = "Release";
+            this.removeToolStripMenuItem.Click += new System.EventHandler(this.RemoveToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -287,15 +371,29 @@
             this.Controls.Add(this.buttonSearchCompany);
             this.Controls.Add(this.textBoxCompanyID);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "Form1";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem companyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editDetailsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageLocationsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem palletToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem insertToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxCompanyID;
         private System.Windows.Forms.Button buttonSearchCompany;
