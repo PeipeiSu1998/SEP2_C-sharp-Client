@@ -14,8 +14,8 @@ namespace Client
 {
     public partial class ManageLocations : Form
     {
-        private WMEController WMEController = new WMEController();
-        private CompanyList CompanyList = new CompanyList();
+        private CompanyController CompanyController = new CompanyController();
+        private LocationController LocationController = new LocationController();
         private LocationList RentedLocationList = new LocationList();
         private LocationList AvailableLocationList = new LocationList();
         private ListAdapter ListAdapter = new ListAdapter();
@@ -28,14 +28,14 @@ namespace Client
         private void ButtonFindCompanyLocations_Click(object sender, EventArgs e)
         {
             RentedLocationList = new LocationList();
-            RentedLocationList = WMEController.getRentedLocationList(textBoxCompanyID.Text);
+            RentedLocationList = LocationController.getRentedLocationList(textBoxCompanyID.Text);
             updateRentedLocationsListView();
         }
 
         private void ButtonRentLocation_Click(object sender, EventArgs e)
         {
             if (textBoxLocationID.Text != null && textBoxCompanyID.Text != null)
-                WMEController.assignLocationToCompany(textBoxLocationID.Text, textBoxCompanyID.Text);
+                CompanyController.assignLocationToCompany(textBoxLocationID.Text, textBoxCompanyID.Text);
 
             RentedLocationList = new LocationList();
             AvailableLocationList = new LocationList();
@@ -45,7 +45,7 @@ namespace Client
 
         private void ButtonUnRentLocation_Click(object sender, EventArgs e)
         {
-            WMEController.removeLocationFromCurrentCompany(textBoxLocationID.Text);
+            CompanyController.removeLocationFromCurrentCompany(textBoxLocationID.Text);
             RentedLocationList = new LocationList();
             AvailableLocationList = new LocationList();
             updateAvailableLocationsListView();
@@ -57,7 +57,7 @@ namespace Client
             RentedLocationList = new LocationList();
             AvailableLocationList = new LocationList();
 
-            AvailableLocationList = WMEController.getAvailableLocationList();
+            AvailableLocationList = LocationController.getAvailableLocationList();
             updateAvailableLocationsListView();
             updateRentedLocationsListView();
         }

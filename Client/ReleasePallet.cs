@@ -13,7 +13,7 @@ namespace Client
 {
     public partial class ReleasePallet : Form
     {
-        private WMEController WMEController = new WMEController();
+        private PalletController PalletController = new PalletController();
         public ReleasePallet()
         {
             InitializeComponent();
@@ -21,7 +21,7 @@ namespace Client
 
         private void ButtonReleasePallet_Click(object sender, EventArgs e)
         {
-            WMEController.removePallet(textBoxPalletID.Text, textBoxCompanyID.Text);
+            PalletController.removePallet(textBoxPalletID.Text, textBoxCompanyID.Text);
         }
 
         private void ButtonCancel_Click(object sender, EventArgs e)

@@ -10,7 +10,7 @@ namespace Client
 {
     class ListAdapter
     {
-        private IWMEController wMEController = new WMEController();
+        private ICompanyController wMEController = new CompanyController();
 
         public List<string[]> GetAdaptedAllCompanyList(CompanyList companyList)
         {

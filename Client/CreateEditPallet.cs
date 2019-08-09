@@ -13,7 +13,7 @@ namespace Client
 {
     public partial class CreateEditPallet : Form
     {
-        private WMEController WMEController = new WMEController();
+        private PalletController PalletController = new PalletController();
         private Pallet Pallet = new Pallet();
 
         public CreateEditPallet()
@@ -30,7 +30,7 @@ namespace Client
             Pallet.locationID = textBoxLocationID.Text;
             Pallet.companyID = textBoxCompanyID.Text;
 
-            WMEController.storePallet(Pallet);
+            PalletController.storePallet(Pallet);
         }
 
         private void ButtonUpdatePallet_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace Client
             Pallet.locationID = textBoxLocationID.Text;
             Pallet.companyID = textBoxCompanyID.Text;
 
-            WMEController.updatePallet(Pallet);
+            PalletController.updatePallet(Pallet);
         }
     }
 }

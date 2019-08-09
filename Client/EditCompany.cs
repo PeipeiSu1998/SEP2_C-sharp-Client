@@ -23,7 +23,7 @@ namespace Client
         {
             bool validInput = false;
 
-            IWMEController wMEController = new WMEController();
+            CompanyController CompanyController = new CompanyController();
 
             if (textBoxCompanyID.Text == "")
             {
@@ -56,7 +56,7 @@ namespace Client
                     phone = int.Parse(textBoxPhoneNumber.Text)
                 };
 
-                wMEController.editCompany(tempCompany);
+                CompanyController.editCompany(tempCompany);
             }
 
         }
