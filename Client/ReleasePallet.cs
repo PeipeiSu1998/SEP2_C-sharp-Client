@@ -21,7 +21,25 @@ namespace Client
 
         private void ButtonReleasePallet_Click(object sender, EventArgs e)
         {
-            PalletController.removePallet(textBoxPalletID.Text, textBoxCompanyID.Text);
+            bool validInput = false;
+
+            if (textBoxCompanyID.Text == "")
+            {
+                errorProvider1.SetError(textBoxCompanyID, "Please input company ID");
+            }
+            if (textBoxPalletID.Text == "")
+            {
+                errorProvider1.SetError(textBoxPalletID, "Please input pallet ID");
+            }
+            if (textBoxCompanyID.Text.Length >= 1 && textBoxPalletID.Text.Length >= 1)
+            {
+                validInput = true;
+            }
+
+            if (validInput)
+            {
+                PalletController.removePallet(textBoxPalletID.Text, textBoxCompanyID.Text);
+            }
         }
 
         private void ButtonCancel_Click(object sender, EventArgs e)
