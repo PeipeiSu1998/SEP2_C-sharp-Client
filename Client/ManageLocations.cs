@@ -83,12 +83,12 @@ namespace Client
         /// </summary>
         private void updateAvailableLocationsListView()
         {
-            listBoxAvailableLocations.Items.Clear();
+            listViewAvailableLocations.Items.Clear();
             List<string[]> adaptedAvailableLocationsList = ListAdapter.GetAdaptedAvailableLocationsList(AvailableLocationList);
 
             foreach (string[] location in adaptedAvailableLocationsList)
             {
-                listBoxAvailableLocations.Items.Add(new ListViewItem(location));
+                listViewAvailableLocations.Items.Add(new ListViewItem(location));
             }
 
             paintLocationListRows();
@@ -99,12 +99,12 @@ namespace Client
         /// </summary>
         private void paintLocationListRows()
         {
-            foreach (ListViewItem item in listBoxRentedLocations.Items)
+            foreach (ListViewItem item in listViewRentedLocations.Items)
             {
                 item.BackColor = item.Index % 2 == 0 ? Color.LightGray : Color.LightBlue;
             }
 
-            foreach (ListViewItem item in listBoxAvailableLocations.Items)
+            foreach (ListViewItem item in listViewAvailableLocations.Items)
             {
                 item.BackColor = item.Index % 2 == 0 ? Color.LightGray : Color.LightBlue;
             }

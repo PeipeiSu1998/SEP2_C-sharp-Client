@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\CommunicationController.cs" />
+    <Compile Include="Controller\ICommunicationController.cs" />
     <Compile Include="Controller\ILocationController.cs" />
     <Compile Include="Controller\IPalletController.cs" />
     <Compile Include="Controller\ICompanyController.cs" />

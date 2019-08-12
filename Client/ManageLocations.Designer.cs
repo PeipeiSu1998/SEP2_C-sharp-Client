@@ -32,14 +32,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.listBoxRentedLocations = new System.Windows.Forms.ListBox();
-            this.listBoxAvailableLocations = new System.Windows.Forms.ListBox();
             this.textBoxCompanyID = new System.Windows.Forms.TextBox();
             this.textBoxLocationID = new System.Windows.Forms.TextBox();
             this.buttonSearchCompany = new System.Windows.Forms.Button();
             this.buttonRentLocation = new System.Windows.Forms.Button();
             this.buttonUnRentLocation = new System.Windows.Forms.Button();
             this.buttonViewAvailableLocations = new System.Windows.Forms.Button();
+            this.listViewRentedLocations = new System.Windows.Forms.ListView();
+            this.listViewAvailableLocations = new System.Windows.Forms.ListView();
+            this.companyID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.locationID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.rentalStartDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.availableLocationID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // label1
@@ -77,24 +81,6 @@
             this.label4.Size = new System.Drawing.Size(130, 17);
             this.label4.TabIndex = 3;
             this.label4.Text = "Available Locations";
-            // 
-            // listBoxRentedLocations
-            // 
-            this.listBoxRentedLocations.FormattingEnabled = true;
-            this.listBoxRentedLocations.ItemHeight = 16;
-            this.listBoxRentedLocations.Location = new System.Drawing.Point(31, 235);
-            this.listBoxRentedLocations.Name = "listBoxRentedLocations";
-            this.listBoxRentedLocations.Size = new System.Drawing.Size(444, 452);
-            this.listBoxRentedLocations.TabIndex = 4;
-            // 
-            // listBoxAvailableLocations
-            // 
-            this.listBoxAvailableLocations.FormattingEnabled = true;
-            this.listBoxAvailableLocations.ItemHeight = 16;
-            this.listBoxAvailableLocations.Location = new System.Drawing.Point(611, 235);
-            this.listBoxAvailableLocations.Name = "listBoxAvailableLocations";
-            this.listBoxAvailableLocations.Size = new System.Drawing.Size(482, 452);
-            this.listBoxAvailableLocations.TabIndex = 5;
             // 
             // textBoxCompanyID
             // 
@@ -150,19 +136,69 @@
             this.buttonViewAvailableLocations.UseVisualStyleBackColor = true;
             this.buttonViewAvailableLocations.Click += new System.EventHandler(this.ButtonViewAvailableLocations_Click);
             // 
+            // listViewRentedLocations
+            // 
+            this.listViewRentedLocations.AllowColumnReorder = true;
+            this.listViewRentedLocations.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.companyID,
+            this.locationID,
+            this.rentalStartDate});
+            this.listViewRentedLocations.FullRowSelect = true;
+            this.listViewRentedLocations.GridLines = true;
+            this.listViewRentedLocations.Location = new System.Drawing.Point(31, 235);
+            this.listViewRentedLocations.Name = "listViewRentedLocations";
+            this.listViewRentedLocations.Size = new System.Drawing.Size(514, 457);
+            this.listViewRentedLocations.TabIndex = 12;
+            this.listViewRentedLocations.UseCompatibleStateImageBehavior = false;
+            this.listViewRentedLocations.View = System.Windows.Forms.View.Details;
+            // 
+            // listViewAvailableLocations
+            // 
+            this.listViewAvailableLocations.AllowColumnReorder = true;
+            this.listViewAvailableLocations.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.availableLocationID});
+            this.listViewAvailableLocations.FullRowSelect = true;
+            this.listViewAvailableLocations.GridLines = true;
+            this.listViewAvailableLocations.Location = new System.Drawing.Point(610, 235);
+            this.listViewAvailableLocations.Name = "listViewAvailableLocations";
+            this.listViewAvailableLocations.Size = new System.Drawing.Size(221, 457);
+            this.listViewAvailableLocations.TabIndex = 13;
+            this.listViewAvailableLocations.UseCompatibleStateImageBehavior = false;
+            this.listViewAvailableLocations.View = System.Windows.Forms.View.Details;
+            // 
+            // companyID
+            // 
+            this.companyID.Text = "Company ID";
+            this.companyID.Width = 125;
+            // 
+            // locationID
+            // 
+            this.locationID.Text = "Location ID";
+            this.locationID.Width = 115;
+            // 
+            // rentalStartDate
+            // 
+            this.rentalStartDate.Text = "Rental Start Date";
+            this.rentalStartDate.Width = 176;
+            // 
+            // availableLocationID
+            // 
+            this.availableLocationID.Text = "Location ID";
+            this.availableLocationID.Width = 213;
+            // 
             // ManageLocations
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1128, 780);
+            this.ClientSize = new System.Drawing.Size(850, 780);
+            this.Controls.Add(this.listViewAvailableLocations);
+            this.Controls.Add(this.listViewRentedLocations);
             this.Controls.Add(this.buttonViewAvailableLocations);
             this.Controls.Add(this.buttonUnRentLocation);
             this.Controls.Add(this.buttonRentLocation);
             this.Controls.Add(this.buttonSearchCompany);
             this.Controls.Add(this.textBoxLocationID);
             this.Controls.Add(this.textBoxCompanyID);
-            this.Controls.Add(this.listBoxAvailableLocations);
-            this.Controls.Add(this.listBoxRentedLocations);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -181,13 +217,17 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ListBox listBoxRentedLocations;
-        private System.Windows.Forms.ListBox listBoxAvailableLocations;
         private System.Windows.Forms.TextBox textBoxCompanyID;
         private System.Windows.Forms.TextBox textBoxLocationID;
         private System.Windows.Forms.Button buttonSearchCompany;
         private System.Windows.Forms.Button buttonRentLocation;
         private System.Windows.Forms.Button buttonUnRentLocation;
         private System.Windows.Forms.Button buttonViewAvailableLocations;
+        private System.Windows.Forms.ListView listViewRentedLocations;
+        private System.Windows.Forms.ListView listViewAvailableLocations;
+        private System.Windows.Forms.ColumnHeader companyID;
+        private System.Windows.Forms.ColumnHeader locationID;
+        private System.Windows.Forms.ColumnHeader rentalStartDate;
+        private System.Windows.Forms.ColumnHeader availableLocationID;
     }
 }
