@@ -12,6 +12,13 @@ namespace Client
     {
         private IWMEController wMEController = new WMEController();
 
+
+        /// <summary>
+        /// Method for converting the companylist object to a string list
+        /// so that the list contains all company item in the company list object
+        /// </summary>
+        /// <param name="companyList"></param>
+        /// <returns></returns>
         public List<string[]> GetAdaptedAllCompanyList(CompanyList companyList)
         {
             List<string[]> allCompanyList = new List<string[]>();
@@ -25,6 +32,12 @@ namespace Client
             return allCompanyList;
         }
 
+        /// <summary>
+        /// Method for converting a location list object to a string list
+        /// so that the list contains all items in the location list object
+        /// </summary>
+        /// <param name="locationList"></param>
+        /// <returns></returns>
         public List<string[]> GetAdaptedAvailableLocationsList(LocationList locationList)
         {
             List<string[]> allLocationList = new List<string[]>();
@@ -38,6 +51,13 @@ namespace Client
             return allLocationList;
         }
 
+
+        /// <summary>
+        /// Method for converting a rented location list object to a string list
+        /// so that the list contains all items in the location list object
+        /// </summary>
+        /// <param name="locationList"></param>
+        /// <returns></returns>
         public List<string[]> GetAdaptedRentedLocationsList(LocationList locationList)
         {
             List<string[]> allLocationList = new List<string[]>();
@@ -51,6 +71,12 @@ namespace Client
             return allLocationList;
         }
 
+        /// <summary>
+        /// Method for converting pallet list object to be a string list
+        /// so that the list contains all items in the pallet list object
+        /// </summary>
+        /// <param name="palletList"></param>
+        /// <returns></returns>
         public List<string[]> GetAdaptedAllPalletsList(PalletList palletList)
         {
             List<string[]> allPalletList = new List<string[]>();

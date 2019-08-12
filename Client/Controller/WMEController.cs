@@ -19,6 +19,11 @@ namespace Client.Controller
         SocketRequest SocketRequest = new SocketRequest();
         JsonSerializer JsonSerializer = new JsonSerializer();
 
+        /// <summary>
+        /// Method for inserting a location to a company
+        /// </summary>
+        /// <param name="locationID"></param>
+        /// <param name="companyID"></param>
         public void assignLocationToCompany(string locationID, string companyID)
         {
             //socket connection
@@ -42,7 +47,12 @@ namespace Client.Controller
             clientSocket.Close();
             //return response;
         }
-
+        
+        
+        /// <summary>
+        /// Method for updating pallet information
+        /// </summary>
+        /// <param name="pallet"></param>
         public void updatePallet(Pallet pallet)
         {
             //socket connection
@@ -64,6 +74,10 @@ namespace Client.Controller
             //return response;
         }
 
+        /// <summary>
+        /// Method for managing company information by inputting a new company object
+        /// </summary>
+        /// <param name="company"></param>
         public void editCompany(Model.Company company)
         {
             //socket connection
@@ -87,6 +101,10 @@ namespace Client.Controller
             //return response;
         }
 
+        /// <summary>
+        /// Method for getting all available locations
+        /// </summary>
+        /// <returns></returns>
         public LocationList getAvailableLocationList()
         {
             //socket connection
@@ -111,6 +129,11 @@ namespace Client.Controller
             return tempLocationList;
         }
 
+        /// <summary>
+        /// Method for getting all rented locations
+        /// </summary>
+        /// <param name="companyID"></param>
+        /// <returns></returns>
         public LocationList getRentedLocationList(string companyID)
         {
             //socket connection
@@ -136,6 +159,10 @@ namespace Client.Controller
             return tempLocationList;
         }
 
+        /// <summary>
+        /// Method for getting all available pallet
+        /// </summary>
+        /// <returns></returns>
         public PalletList getAvailablePalletList()
         {
             //socket connection
@@ -160,6 +187,11 @@ namespace Client.Controller
             return tempPalletList;
         }
 
+        /// <summary>
+        /// Method for getting a company by giving its id
+        /// </summary>
+        /// <param name="companyID"></param>
+        /// <returns></returns>
         public Model.Company getCompanyByID(string companyID)
         {
             //socket connection
@@ -189,6 +221,10 @@ namespace Client.Controller
                 return tempCompany;
         }
 
+        /// <summary>
+        /// Method for getting all companies
+        /// </summary>
+        /// <returns></returns>
         public CompanyList getCompanyList()
         {
             Setup();
@@ -217,6 +253,11 @@ namespace Client.Controller
             return companyList;
         }
 
+        /// <summary>
+        /// Method for getting a location by giving its id
+        /// </summary>
+        /// <param name="locationID"></param>
+        /// <returns></returns>
         public Location getLocationByID(string locationID)
         {
             Setup();
@@ -246,6 +287,13 @@ namespace Client.Controller
             return location;
         }
 
+
+        /// <summary>
+        /// Method for getting a pallet by giving its id and its belonging company's id
+        /// </summary>
+        /// <param name="palletID"></param>
+        /// <param name="companyID"></param>
+        /// <returns></returns>
         public Pallet getPalletByID(string palletID, string companyID)
         {
             Setup();
@@ -279,7 +327,7 @@ namespace Client.Controller
         }
 
         /// <summary>
-        /// Takes a company object, converts it into JSON and sends it to the java server. Expect a server reply used for tests.
+        /// Method for inserting a company to the server
         /// </summary>
         /// <param name="company"></param>
         public void registerCompany(Model.Company company)
@@ -302,6 +350,10 @@ namespace Client.Controller
             //return response;
         }
 
+        /// <summary>
+        /// Method for remiving an exist location from the company that is showing to the client
+        /// </summary>
+        /// <param name="locationID"></param>
         public void removeLocationFromCurrentCompany(string locationID)
         {
             //socket connection
@@ -322,6 +374,11 @@ namespace Client.Controller
             //return response;
         }
 
+        /// <summary>
+        /// Method for removing a pallet by giving its id and its belonging company's id
+        /// </summary>
+        /// <param name="palletID"></param>
+        /// <param name="companyID"></param>
         public void removePallet(string palletID, string companyID)
         {
             //socket connection
@@ -344,6 +401,10 @@ namespace Client.Controller
             //return response;
         }
 
+        /// <summary>
+        /// Method for inserting a pallet by giving a pallet object
+        /// </summary>
+        /// <param name="pallet"></param>
         public void storePallet(Pallet pallet)
         {
             //socket connection

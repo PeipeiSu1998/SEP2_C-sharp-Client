@@ -14,11 +14,21 @@ namespace Client
 {
     public partial class TheMainForm : Form
     {
+
+        /// <summary>
+        ///Method for initializing the form of registering company
+        /// </summary>
         public TheMainForm()
         {
             InitializeComponent();
         }
 
+
+        /// <summary>
+        /// Method that handling the click event of createing company's button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonCreate_Click(object sender, EventArgs e)
         {
             bool validInput = false;
@@ -62,6 +72,12 @@ namespace Client
             }
         }
 
+
+        /// <summary>
+        /// Method that handling the click event of cancelling inputted company information's button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
             textBoxCompanyID.Text = null;

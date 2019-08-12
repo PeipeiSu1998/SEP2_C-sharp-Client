@@ -19,6 +19,12 @@ namespace Client
             InitializeComponent();
         }
 
+
+        /// <summary>
+        /// Method that managing the click event of saving company information's button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonSave_Click(object sender, EventArgs e)
         {
             bool validInput = false;
@@ -61,6 +67,12 @@ namespace Client
 
         }
 
+        /// <summary>
+        /// Method that managing the click event of canceling the inputted company information
+        /// but without deleting the current company's information from server side
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
             textBoxCompanyID.Text = null;
