@@ -8,5 +8,7 @@ namespace Client.Controller
 {
     interface ICommunicationController
     {
+        string ReadReplyMessage();
+        void SendMessage(string Message);
     }
 }

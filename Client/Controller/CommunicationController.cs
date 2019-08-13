@@ -11,7 +11,7 @@ namespace Client.Controller
     /// <summary>
     /// This is a sealed thread safe singleton class. It can not be inherited from.
     /// </summary>
-    public sealed class CommunicationController
+    public sealed class CommunicationController : ICommunicationController
     {
         private static readonly object InstanceLock = new object();
         private static CommunicationController instance = null;

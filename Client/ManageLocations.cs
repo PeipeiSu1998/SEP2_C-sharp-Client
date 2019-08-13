@@ -67,12 +67,12 @@ namespace Client
         /// </summary>
         private void updateRentedLocationsListView()
         {
-            listBoxRentedLocations.Items.Clear();
+            listViewRentedLocations.Items.Clear();
             List<string[]> adaptedRentedLocationsList = ListAdapter.GetAdaptedRentedLocationsList(RentedLocationList);
 
             foreach (string[] location in adaptedRentedLocationsList)
             {
-                listBoxRentedLocations.Items.Add(new ListViewItem(location));
+                listViewRentedLocations.Items.Add(new ListViewItem(location));
             }
 
             paintLocationListRows();

@@ -8,7 +8,7 @@ namespace Client.Controller
 {
     interface IPalletController
     {
-        PalletList getPalletList();
+        PalletList getAvailablePalletList();
         void storePallet(Pallet pallet);
         Pallet getPalletByID(string palletID, string companyID);
         void removePallet(string palletID, string companyID);

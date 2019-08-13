@@ -8,7 +8,7 @@ using static Client.Controller.SocketRequest;
 
 namespace Client.Controller
 {
-    class PalletController
+    class PalletController : IPalletController
     {
         private SocketRequest SocketRequest = new SocketRequest();
         private readonly CommunicationController communicationController;
