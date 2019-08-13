@@ -45,7 +45,7 @@ namespace Client
             if (locationList.locations != null)
                 foreach (Location location in locationList.locations)
                 {
-                    string[] row = { location.locationID, new DateTime(long.Parse(location.rentalStart)).ToString() };
+                    string[] row = { location.locationID, transformIntoDateTime(location.rentalStart.ToString()) };
                     allLocationList.Add(row);
                 }
             return allLocationList;
@@ -58,10 +58,19 @@ namespace Client
             if (palletList.pallets != null)
                 foreach (Pallet pallet in palletList.pallets)
                 {
-                    string[] row = { pallet.palletID, pallet.companyID, pallet.locationID, pallet.palletHeight.ToString(), pallet.palletArea.ToString(), pallet.arrivalDate.ToString(), pallet.daysStored.ToString() };
+                    string[] row = { pallet.palletID, pallet.companyID, pallet.locationID, pallet.palletHeight.ToString(), pallet.palletArea.ToString(), transformIntoDateTime(pallet.arrivalDate.ToString()), pallet.daysStored.ToString() };
                     allPalletList.Add(row);
                 }
             return allPalletList;
+        }
+
+        public string transformIntoDateTime(string DateAsMs)
+        {
+            double ticks = double.Parse(DateAsMs);
+            TimeSpan time = TimeSpan.FromMilliseconds(ticks);
+            DateTime startdate = new DateTime(1970, 1, 1) + time;
+
+            return startdate.ToString("dd-MM-yyyy");
         }
     }
 }

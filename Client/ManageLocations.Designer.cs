@@ -39,10 +39,9 @@
             this.buttonUnRentLocation = new System.Windows.Forms.Button();
             this.buttonViewAvailableLocations = new System.Windows.Forms.Button();
             this.listViewRentedLocations = new System.Windows.Forms.ListView();
-            this.listViewAvailableLocations = new System.Windows.Forms.ListView();
-            this.companyID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.locationID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.rentalStartDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listViewAvailableLocations = new System.Windows.Forms.ListView();
             this.availableLocationID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
@@ -140,7 +139,6 @@
             // 
             this.listViewRentedLocations.AllowColumnReorder = true;
             this.listViewRentedLocations.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.companyID,
             this.locationID,
             this.rentalStartDate});
             this.listViewRentedLocations.FullRowSelect = true;
@@ -151,6 +149,16 @@
             this.listViewRentedLocations.TabIndex = 12;
             this.listViewRentedLocations.UseCompatibleStateImageBehavior = false;
             this.listViewRentedLocations.View = System.Windows.Forms.View.Details;
+            // 
+            // locationID
+            // 
+            this.locationID.Text = "Location ID";
+            this.locationID.Width = 115;
+            // 
+            // rentalStartDate
+            // 
+            this.rentalStartDate.Text = "Rental Start Date";
+            this.rentalStartDate.Width = 176;
             // 
             // listViewAvailableLocations
             // 
@@ -165,21 +173,6 @@
             this.listViewAvailableLocations.TabIndex = 13;
             this.listViewAvailableLocations.UseCompatibleStateImageBehavior = false;
             this.listViewAvailableLocations.View = System.Windows.Forms.View.Details;
-            // 
-            // companyID
-            // 
-            this.companyID.Text = "Company ID";
-            this.companyID.Width = 125;
-            // 
-            // locationID
-            // 
-            this.locationID.Text = "Location ID";
-            this.locationID.Width = 115;
-            // 
-            // rentalStartDate
-            // 
-            this.rentalStartDate.Text = "Rental Start Date";
-            this.rentalStartDate.Width = 176;
             // 
             // availableLocationID
             // 
@@ -225,7 +218,6 @@
         private System.Windows.Forms.Button buttonViewAvailableLocations;
         private System.Windows.Forms.ListView listViewRentedLocations;
         private System.Windows.Forms.ListView listViewAvailableLocations;
-        private System.Windows.Forms.ColumnHeader companyID;
         private System.Windows.Forms.ColumnHeader locationID;
         private System.Windows.Forms.ColumnHeader rentalStartDate;
         private System.Windows.Forms.ColumnHeader availableLocationID;
