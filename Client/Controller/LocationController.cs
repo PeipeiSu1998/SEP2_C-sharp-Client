@@ -8,7 +8,7 @@ using static Client.Controller.SocketRequest;
 
 namespace Client.Controller
 {
-    class LocationController
+    class LocationController : ILocationController
     {
         private SocketRequest SocketRequest = new SocketRequest();
         private readonly CommunicationController communicationController;

@@ -40,7 +40,6 @@ namespace Client
 
         private void ButtonViewAllCompanies_Click(object sender, EventArgs e)
         {
-            //orderList = administratorService.GetOrdersList();
             CompanyList = CompanyController.getCompanyList();
             updateCompanyListView();
         }
