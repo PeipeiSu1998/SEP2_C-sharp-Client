@@ -14,7 +14,9 @@ namespace Client
 {
     public partial class MainForm : Form
     {
-        private WMEController WMEController = new WMEController();
+        private CompanyController CompanyController = new CompanyController();
+        private PalletController PalletController = new PalletController();
+        private LocationController LocationController = new LocationController();
         private CompanyList CompanyList = new CompanyList();
         private LocationList LocationList = new LocationList();
         private PalletList PalletList = new PalletList();
@@ -40,7 +42,7 @@ namespace Client
         private void ButtonSearchCompany_Click(object sender, EventArgs e)
         {
             CompanyList.companies = new List<Company>();
-            Company = WMEController.getCompanyByID(textBoxCompanyID.Text);
+            Company = CompanyController.getCompanyByID(textBoxCompanyID.Text);
             if (Company != null)
                 CompanyList.companies.Add(Company);
             updateCompanyListView();
@@ -54,8 +56,7 @@ namespace Client
         /// <param name="e"></param>
         private void ButtonViewAllCompanies_Click(object sender, EventArgs e)
         {
-            //orderList = administratorService.GetOrdersList();
-            CompanyList = WMEController.getCompanyList();
+            CompanyList = CompanyController.getCompanyList();
             updateCompanyListView();
         }
 
@@ -67,8 +68,8 @@ namespace Client
         /// <param name="e"></param>
         private void ButtonSearchPallet_Click(object sender, EventArgs e)
         {
-            Pallet = null;
-            Pallet = WMEController.getPalletByID(textBoxPalletIDs.Text, textBoxCompanyID.Text);
+            PalletList.pallets = new List<Pallet>();
+            Pallet = PalletController.getPalletByID(textBoxPalletIDs.Text, textBoxCompanyID.Text);
             if (Pallet != null)
                 PalletList.pallets.Add(Pallet);
             updatePalletListView();
@@ -82,7 +83,7 @@ namespace Client
         /// <param name="e"></param>
         private void ButtonViewAll_Click(object sender, EventArgs e)
         {
-            PalletList = WMEController.getAvailablePalletList();
+            PalletList = PalletController.getAvailablePalletList();
             updatePalletListView();
         }
 
@@ -94,7 +95,7 @@ namespace Client
         /// <param name="e"></param>
         public void ButtonViewAllAvalableLocations_Click(object sender, EventArgs e)
         {
-            LocationList = WMEController.getAvailableLocationList();
+            LocationList = LocationController.getAvailableLocationList();
             updateAvailableLocationListView();
         }
 

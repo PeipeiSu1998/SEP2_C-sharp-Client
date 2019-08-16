@@ -50,7 +50,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\IWMEController.cs" />
+    <Compile Include="Controller\CommunicationController.cs" />
+    <Compile Include="Controller\ICommunicationController.cs" />
+    <Compile Include="Controller\ILocationController.cs" />
+    <Compile Include="Controller\IPalletController.cs" />
+    <Compile Include="Controller\ICompanyController.cs" />
+    <Compile Include="Controller\LocationController.cs" />
+    <Compile Include="Controller\PalletController.cs" />
     <Compile Include="CreateEditPallet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,7 +83,7 @@
     <Compile Include="Model\Pallet.cs" />
     <Compile Include="Model\PalletList.cs" />
     <Compile Include="Model\SocketRequest.cs" />
-    <Compile Include="Controller\WMEController.cs" />
+    <Compile Include="Controller\CompanyController.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

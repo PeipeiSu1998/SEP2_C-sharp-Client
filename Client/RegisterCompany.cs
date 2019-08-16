@@ -14,7 +14,8 @@ namespace Client
 {
     public partial class TheMainForm : Form
     {
-
+        private CompanyController CompanyController = new CompanyController();
+        
         /// <summary>
         ///Method for initializing the form of registering company
         /// </summary>
@@ -33,7 +34,6 @@ namespace Client
         {
             bool validInput = false;
 
-            IWMEController wMEController = new WMEController();
 
             if (textBoxCompanyID.Text == "") 
             {
@@ -66,7 +66,7 @@ namespace Client
                     phone = int.Parse(textBoxPhoneNumber.Text)
                 };
 
-                wMEController.registerCompany(tempCompany);
+                CompanyController.registerCompany(tempCompany);
 
                 validInput = false;
             }
