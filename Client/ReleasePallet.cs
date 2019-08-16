@@ -14,11 +14,21 @@ namespace Client
     public partial class ReleasePallet : Form
     {
         private PalletController PalletController = new PalletController();
+
+        /// <summary>
+        /// Method that initializing the release pallet's view
+        /// </summary>
         public ReleasePallet()
         {
             InitializeComponent();
         }
 
+
+        /// <summary>
+        /// Method that handling the click event of releasing pallet's button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonReleasePallet_Click(object sender, EventArgs e)
         {
             bool validInput = false;
@@ -42,6 +52,12 @@ namespace Client
             }
         }
 
+
+        /// <summary>
+        /// Method that handling the click event of cancelling inputted pallet information's button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonCancel_Click(object sender, EventArgs e)
         {
             textBoxPalletID.Text = null;

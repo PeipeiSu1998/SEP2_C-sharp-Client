@@ -21,6 +21,12 @@ namespace Client
             InitializeComponent();
         }
 
+
+        /// <summary>
+        /// Method that managing the click event of create pallet button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonCreatePallet_Click(object sender, EventArgs e)
         {
             bool validInput = false;
@@ -64,6 +70,12 @@ namespace Client
             }
         }
 
+
+        /// <summary>
+        /// Method that managing the click event of update pallet button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonUpdatePallet_Click(object sender, EventArgs e)
         {
             bool validInput = false;

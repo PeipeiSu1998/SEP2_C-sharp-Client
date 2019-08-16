@@ -24,11 +24,21 @@ namespace Client
         private Company Company = new Company();
         private Pallet Pallet = new Pallet();
 
+
+        /// <summary>
+        /// Method for initializing and openning the main form
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
         }
 
+
+        /// <summary>
+        /// Method that handling the click event of search company button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonSearchCompany_Click(object sender, EventArgs e)
         {
             CompanyList.companies = new List<Company>();
@@ -38,12 +48,24 @@ namespace Client
             updateCompanyListView();
         }
 
+
+        /// <summary>
+        /// Method that handling the click event of viewing all companies button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonViewAllCompanies_Click(object sender, EventArgs e)
         {
             CompanyList = CompanyController.getCompanyList();
             updateCompanyListView();
         }
 
+
+        /// <summary>
+        /// Method that handling the click event of searching pallet button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonSearchPallet_Click(object sender, EventArgs e)
         {
             PalletList.pallets = new List<Pallet>();
@@ -53,11 +75,24 @@ namespace Client
             updatePalletListView();
         }
 
+
+        /// <summary>
+        /// Method that handling the click event of viewing all available pallet button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonViewAll_Click(object sender, EventArgs e)
         {
             PalletList = PalletController.getAvailablePalletList();
             updatePalletListView();
         }
+
+
+        /// <summary>
+        /// Method that handling the click event of viewing all available location button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void ButtonViewAllAvalableLocations_Click(object sender, EventArgs e)
         {
             LocationList = LocationController.getAvailableLocationList();
@@ -78,6 +113,12 @@ namespace Client
             frm.Show();
         }
 
+
+        /// <summary>
+        /// Method that handling the click event of editing company information button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EditDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EditCompany frm = new EditCompany();
@@ -87,6 +128,12 @@ namespace Client
             frm.Show();
         }
 
+
+        /// <summary>
+        /// Method that handling the click event of editing location information button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ManageLocationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ManageLocations frm = new ManageLocations();
@@ -96,6 +143,12 @@ namespace Client
             frm.Show();
         }
 
+
+        /// <summary>
+        /// Method that handling the click event of inserting pallet button with its information
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void InsertToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreateEditPallet frm = new CreateEditPallet();
@@ -105,6 +158,12 @@ namespace Client
             frm.Show();
         }
 
+
+        /// <summary>
+        /// Method that handling the click event of removing a pallet from the server
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RemoveToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ReleasePallet frm = new ReleasePallet();
@@ -116,7 +175,7 @@ namespace Client
 
 
         /// <summary>
-        /// update company list view
+        /// Method for updating company list view
         /// </summary>
         private void updateCompanyListView()
         {
@@ -133,7 +192,7 @@ namespace Client
 
 
         /// <summary>
-        /// update pallet list view
+        /// Method for updating pallet list view
         /// </summary>
         private void updatePalletListView()
         {
@@ -149,7 +208,7 @@ namespace Client
         }
 
         /// <summary>
-        /// update location list view
+        /// Method for updating location list view
         /// </summary>
         private void updateAvailableLocationListView()
         {
@@ -165,7 +224,7 @@ namespace Client
         }
 
         /// <summary>
-        /// painting rows in list view for companies
+        ///Method for painting rows in list view for companies
         /// </summary>
         private void paintCompanyRows()
         {
@@ -176,7 +235,7 @@ namespace Client
         }
 
         /// <summary>
-        /// painting rows in list view for pallets
+        /// Method for painting rows in list view for pallets
         /// </summary>
         private void paintPalletRows()
         {
@@ -187,7 +246,7 @@ namespace Client
         }
 
         /// <summary>
-        /// painting rows in list view for locations
+        /// Method painting rows in list view for locations
         /// </summary>
         private void paintLocationRows()
         {

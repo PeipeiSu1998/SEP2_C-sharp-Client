@@ -20,11 +20,20 @@ namespace Client
         private LocationList AvailableLocationList = new LocationList();
         private ListAdapter ListAdapter = new ListAdapter();
 
+
+        /// <summary>
+        /// Method for initializing the manage location form
+        /// </summary>
         public ManageLocations()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Method that handling the click event of find company's locations' button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonFindCompanyLocations_Click(object sender, EventArgs e)
         {
             RentedLocationList = new LocationList();
@@ -32,6 +41,12 @@ namespace Client
             updateRentedLocationsListView();
         }
 
+
+        /// <summary>
+        /// Method that handling the click event of renting a location to a company
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonRentLocation_Click(object sender, EventArgs e)
         {
             if (textBoxLocationID.Text != null && textBoxCompanyID.Text != null)
@@ -43,6 +58,12 @@ namespace Client
             updateRentedLocationsListView();
         }
 
+
+        /// <summary>
+        /// Method that handling the click event of the button for removing a location from the current company
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonUnRentLocation_Click(object sender, EventArgs e)
         {
             CompanyController.removeLocationFromCurrentCompany(textBoxLocationID.Text);
@@ -52,6 +73,12 @@ namespace Client
             updateRentedLocationsListView();
         }
 
+
+        /// <summary>
+        /// Method that handling the click event of viewing all available locations' button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonViewAvailableLocations_Click(object sender, EventArgs e)
         {
             RentedLocationList = new LocationList();
@@ -63,7 +90,7 @@ namespace Client
         }
 
         /// <summary>
-        /// update rented location list view
+        /// Method that handling the click event of updating rented location list view's button
         /// </summary>
         private void updateRentedLocationsListView()
         {
@@ -79,7 +106,7 @@ namespace Client
         }
 
         /// <summary>
-        /// update available location list view
+        /// Method that handling the click event of updating available location list view's button
         /// </summary>
         private void updateAvailableLocationsListView()
         {
@@ -95,7 +122,7 @@ namespace Client
         }
 
         /// <summary>
-        /// painting rows in list view for locations
+        /// Method that handling the click event of painting rows in list view for locations' button
         /// </summary>
         private void paintLocationListRows()
         {
