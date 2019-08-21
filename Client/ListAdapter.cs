@@ -10,6 +10,12 @@ namespace Client
 {
     class ListAdapter
     {
+        /// <summary>
+        /// Method for converting a company list object to a string list
+        /// so that the list contains all items in the location list object
+        /// </summary>
+        /// <param name="companyList"></param>
+        /// <returns></returns>
         public List<string[]> GetAdaptedAllCompanyList(CompanyList companyList)
         {
             List<string[]> allCompanyList = new List<string[]>();
